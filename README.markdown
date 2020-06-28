@@ -9,6 +9,7 @@ This repository is the master documentation for solar gators. The docs are hoste
 1. `If people don’t know why your project exists, they won’t use it.`
 2. `If people can’t figure out how to install your code, they won’t use it.`
 3. `If people can’t figure out how to use your code, they won’t use it.`
+
 source: [Medium Article](https://link.medium.com/UeKmgYx9E7)
 
 Anything and everything should be documented!
@@ -35,14 +36,20 @@ Required packages:
 
 The first thing to do is clone the repository locally, you can either use the following command or install [GitHub Desktop](https://desktop.github.com/).
 
-`$ git clone https://github.com/Solar-Gators/docs`
+```Bash
+$ git clone https://github.com/Solar-Gators/docs
+```
 
 After cloning run the following command from the root of the repository.
 
-`$ pip install -r requirements.txt`
+```Bash
+$ pip install -r requirements.txt`
+```
 
 The project comes configured with a make command that works with windows, OSX (not tested) and Linux. There are various commands that can be used run `make help` to see them all. The command we are most interested in is the following command. 
 
-`$ make livehtml`
+```Bash
+$ make livehtml
+```
 
 This command will start a local server on `http://localhost:8000`. Navigate to the URL to see the locally hosted site! Any changes you make to the source will automatically be reflected on your local site.
