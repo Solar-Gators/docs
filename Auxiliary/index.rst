@@ -1,2 +1,2 @@
-Auiliary
+Auxiliary
 ========
