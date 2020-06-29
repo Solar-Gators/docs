@@ -11,6 +11,7 @@ If you are new here please read our :doc:`Onboarding Guide <OnboardingGuide>`
    
    self
    Onboarding Guide <OnboardingGuide>
+   Lectures <Lectures/index>
 
 Below is a list of docs for our subteams.
 
