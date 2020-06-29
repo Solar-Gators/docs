@@ -2,8 +2,8 @@ Telemetry
 =========
 
 .. toctree::
-   :maxdepth: 1
+   :maxdepth: 2
 
    Pit GUI <gui>
-   Reciver <receiver>
+   Pit Reciver <receiver>
    Car <car>
