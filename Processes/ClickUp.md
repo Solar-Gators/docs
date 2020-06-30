@@ -22,7 +22,7 @@ To create a branch do the following:
 To get the branch on your computer:
 1. Go to where you have the repo on your computer and open git bash.
 2. Type `git fetch` to update your local copy with one at the origin.
-3. Type `git checkout branchName` where you paste or type the branch name you would like to check out.
+3. Type `git checkout branchName` where you replace branchName by pasting or typing the branch name you would like to check out.
 4. Start developing! make sure to commit often and leave meaingful commit messges.
 
 # STATUSES
