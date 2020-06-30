@@ -15,7 +15,7 @@ The maximum power point trackers or MPPTs allow us to dynamically adjust the loa
 The most important part of the whole car is the battery management system or BMS. We currently use 18650 lithium ion batteries and these are known to be highly volitile is not cared for properly. The BMS allows us to automatically care for them. The batteries have to be kept cool, have a maximum discharge, a minimum voltage and a maximum voltage; the BMS makes sure all of those conditions are met and if they are met it turns off the car and alerts the driver, and those around that the car is unsafe.
 
 ### Telemetry
-In order for us to know more about the car telemetry gathers data from the subsystems and relays it back to the Pit crew. This allows us to make strategic decisions know why something went wrong if it did go wrong and give us general information about the cars state.
+In order for us to know more about the car telemetry gathers data from the subsystems and relays it back to the pit crew. This allows us to make strategic decisions know why something went wrong if it did go wrong and give us general information about the cars state.
 
 ### Auxillary Systems
 The auxillary systems or Aux team makes sure that all the innate functions of a car happen. Aux is in charge of everything from controlling the speed via cruise controll, to turn signals, breaklights, headlights and the horn.
