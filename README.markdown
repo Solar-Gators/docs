@@ -16,7 +16,7 @@ Anything and everything should be documented!
 
 ## How to Make Documentation
 
-All of the documentation is written in markdown (.md or .markdown) and reStructuredText (.rst) files. markdown is the documentation language of choice for GitHub and are many guides available. Here is a [good markdown guide](https://www.markdownguide.org/getting-started/). reStructuredText is less supported and I suggest to only use it over markdwon when you have to. There is a [reStructuredText guide here.](https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html)
+All of the documentation is written in markdown (.md or .markdown) and reStructuredText (.rst) files. markdown is the documentation language of choice for GitHub and are many guides available. Here is a [good markdown guide](https://www.markdownguide.org/getting-started/) and here is a [good markdown refrence](https://www.markdownguide.org/basic-syntax/). reStructuredText is less supported and I suggest to only use it over markdwon when you have to. There is a [reStructuredText guide here.](https://thomas-cokelaer.info/tutorials/sphinx/rest_syntax.html)
 
 There are two options for documenting code.
 
