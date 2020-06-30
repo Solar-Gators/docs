@@ -14,7 +14,8 @@ If you're running macOS, Linux or [Winows Subsystem for Linux](https://docs.micr
 $ curl -sL https://deb.nodesource.com/setup_12.14 | sudo -E bash -
 ```
 *note*: You may need to install curl if it's not already
-Now install it
+
+Now install node
 
 ```Bash
 $ sudo apt-get install nodejs
@@ -42,16 +43,16 @@ The website will popup a new browser window at `localhost:3000`.
     ├── .github                  # GitHub actions continous integration files
     ├── backend                  # NodeJS server
     ├── client                   # React App (frontend)
-    ├── .gitignore               # Automated tests (alternatively `spec` or `tests`)
+    ├── .gitignore
     ├── package.json             # Configuration file for npm (contains package dependencies)
     └── README.md
 
 ### Backend
-The backend is built for an API interface for the GUI on NodeJS under the [ExpressJS library](https://expressjs.com/). I suggest doing some EpressJS examples if you are not fimilar with the library.
+The backend is built for an API interface to drive the GUI. The runtime is NodeJS under the [ExpressJS library](https://expressjs.com/). I suggest doing some EpressJS examples if you are not fimilar with the library.
 
 **Resources**: [NodeJS Example](https://medium.com/@adnanrahic/hello-world-app-with-node-js-and-express-c1eb7cfa8a30), [ExpressJS Example](https://medium.com/@onejohi/building-a-simple-rest-api-with-nodejs-and-express-da6273ed7ca9)
 
-The database used is a mongodb instance located on MongoDB Atlas. The API logic is loosely based on the [Model-view-controller (MVC) pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) witht the views being in React instead of with the backend files.
+The database used is a mongodb instance located on MongoDB Atlas. The API logic is loosely based on the [Model-view-controller (MVC) pattern](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93controller) with the views being in React instead of with the backend files.
 
     .
     ├── ...
