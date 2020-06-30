@@ -6,7 +6,9 @@ The code for this team is located in the [Telemetry_2019-2020](https://github.co
 
 First install the [STM32CubeIDE](https://www.st.com/en/development-tools/stm32cubeide.html) as that is what we will be using for our toolchain and to program our boards.
 
-Next, clone [our repository](https://github.com/Solar-Gators/Telemetry_2019-2020). Open the STM32CubeIDE on your computer and navigate to **File**->**Open Projects from File System...**. Browse by **Directory** to the "Telemetry_2019-2020" cloned directory and select it. Then as in Figure 1 below, only select the "Telemetry_2019-2020\dev-board" folder to import as an Eclipse project and select **Finish**. Now the project should be imported and you can see it on the **Project Explorer** pane to your left. If you are familiar with Eclipse, this IDE behaves very similar.
+Next, clone [our repository](https://github.com/Solar-Gators/Telemetry_2019-2020). Open the STM32CubeIDE on your computer and navigate to **File**->**Open Projects from File System...**. Browse by **Directory** to the "Telemetry_2019-2020" cloned directory and select it. Then as in the Figure below, only select the "Telemetry_2019-2020\dev-board" folder to import as an Eclipse project and select **Finish**. Now the project should be imported and you can see it on the **Project Explorer** pane to your left. If you are familiar with Eclipse, this IDE behaves very similar.
+
+![Import Project](/_static/telemetry/telemetry_import-project.PNG)
 
 ## Building and Running The Code
 
