@@ -20,6 +20,7 @@ Below is a list of docs for our subteams.
 .. toctree::
    :maxdepth: 1
    :caption: Subteams
+   
    Telemetry <Telemetry/index>
    Auxiliary <Auxiliary/index>
    BMS <BMS/index>
