@@ -20,4 +20,4 @@ Now that the correct programmer has been selecting and hooked up to the computer
 
 ## File Structure
 
-In order to get a feel for this project and where the different modules are located, I suggest you take a look at the [README inside the Telemetry_2019-2020 repo](https://github.com/Solar-Gators/Telemetry_2019-2020/blob/master/README.md).
+In order to get a feel for this project and where the different modules are located, I suggest you take a look at the <a href="https://github.com/Solar-Gators/Telemetry_2019-2020/blob/master/README.md"> README inside the Telemetry_2019-2020 repo </a>
