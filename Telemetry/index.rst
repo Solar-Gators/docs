@@ -16,5 +16,5 @@ The telemetry subteam is made up of the three following sections.
 
    Pit GUI <gui>
    Pit Receiver <receiver>
-   Solar Car <car-software>
+   Solar Car <car>
 
