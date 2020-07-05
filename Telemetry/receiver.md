@@ -153,7 +153,7 @@ To enable ssh access on boot an empty `ssh` file should be created at the root o
 
 After adding the files the directory should look similar to the following. 
 
-![PI Example Network Configuration Folder](/_static/telemetry/pi_example_network_config.jpg)
+![PI Example Network Configuration Folder](/_static/telemetry/pi_example_network_config.JPG)
 
 Now remove the micro sd card and connect it to your raspberry pi. Give it a few minutes to configure. Now we will need to open up a terminal to test our connection to the Pi. This must be done from a computer connected to the same Wi-Fi network as the Pi. To open up a terminal in Windows we can use cmd which can be opened by entering "cmd" into the home search bar. If on Mac open up the search bar and search for "terminal".
 
@@ -287,7 +287,7 @@ Once everything is connected and the node server is running (`npm start`) then c
 
 There should be an output error similar to this.
 
-![raspberry uart error](/_static/telemetry/raspberry_uart_error.png)
+![raspberry uart error](/_static/telemetry/raspberry_uart_error.PNG)
 
 This error is occurring because the data link layer expects the first byte to be a start byte. See the [data link layer section](receiver.html#step-1-data-link-layer) for details.
 
