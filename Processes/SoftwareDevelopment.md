@@ -13,7 +13,7 @@ For car firmware the naming convention is carName-PLATFORM-systemName (ex. cielo
 5. Following the naming convention give the repository a name and a breif description do not add a git ignore or readme.
 6. Create the repository.
 7. On the page following the "…or push an existing repository from the command line" instructions go to git bash and type those lines.
-![Push Repository](_static\processes\set_upstream.png)
+![Push Repository](/_static/processes/set_upstream.png)
 8. Now that you have set the remote repository for your project it is time to add a .gitignore. The easiest way to do this is make a text file and rename it (including the .txt extension) to .gitignore
 9. A great tool for making .gitingore is [here](https://www.toptal.com/developers/gitignore) type your enviornment and hit create and copy the output. **Note:** If there is no ignore file for your envionrment don't worry follow the steps and let someone else know so they can help you or if you know how to create an ignore file feel free to create one just make sure to comment why you exclude things.
 10. Open up your .gitignore file and paste the output.
