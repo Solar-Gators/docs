@@ -3,7 +3,7 @@
 ## Repositories
 Altium schematics, like software, are stored in the organization's GitHub heres how to do that.
 ### Naming:
-For PCBs the naming convention is carName-PLATFORM-systemName-PCB (ex. cielo-STM32F0-telemetry). Cars will often reuse improved versions of previous PCBs; however, please make a new repository when working for a new car that way we can easily distigush what is used where.  
+For PCBs the naming convention is carName-subname-PCB (ex. cielo-telemetry-PCB, cielo-lights-PCB). Cars will often reuse improved versions of previous PCBs; however, please make a new repository when working for a new car that way we can easily distigush what is used where.  
 **To add a new altium project to git**
 1. Make sure you are a member of the [Solar-Gators GitHub organization](https://github.com/Solar-Gators).
 2. Create navigate to your existing project. **Note:** How to make an altium project can be found [here](TODO).
@@ -13,7 +13,7 @@ For PCBs the naming convention is carName-PLATFORM-systemName-PCB (ex. cielo-STM
 5. Following the naming convention give the repository a name and a breif description do not add a git ignore or readme.
 6. Create the repository.
 7. On the page following the "…or push an existing repository from the command line" instructions go to git bash and type those lines.
-![Push Repository](_static\processes\set_upstream.png)
+![Push Repository](/_static/processes/set_upstream.png)
 8. Now that you have set the remote repository for your project it is time to add a .gitignore. The easiest way to do this is make a text file and rename it (including the .txt extension) to .gitignore
 9. A great tool for making .gitingore is [here](https://www.toptal.com/developers/gitignore) type altium hit create and copy the output.
 10. Open up your .gitignore file and paste the output.
