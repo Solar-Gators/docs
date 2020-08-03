@@ -1,2 +1,3 @@
 Auxiliary
 ========
+During the competition, it’s important to be able to communicate what your car is doing to the other drivers, just like you would when driving any other car. The auxiliary team takes care of these functions, which include lights (headlights, blinkers, brake lights, hazards) and the horn. Since the driver needs direct access to most of these, the buttons and switches for them are usually placed directly on the aux board, along with switches for functions that other PCBs control, like cruise control and regenerative braking. It uses CAN bus to communicate with these other boards so it can serve as one unified control panel for the driver.
