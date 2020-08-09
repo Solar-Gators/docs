@@ -25,3 +25,4 @@ Below is a list of docs for our subteams.
    Auxiliary <Auxiliary/index>
    BMS <BMS/index>
    MPPT <MPPT/index>
+   Motor Controller <MotorController/index>
