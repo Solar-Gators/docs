@@ -8,14 +8,14 @@ The motor controls PCB was created to supplement other functions that already ex
 4. Cruise Control
 5. Regenerative braking input  
 
-### *Precharge:*  
+### *Precharge*  
 Precharge is necessary to prevent instantaneous short circuit current due to the massive capacitance of the motor controller and mppts. Without precharging these device may fail overtime.  
 
 Precharge is done by slowly charging the capacitors of these devices toward their nominal operating voltage. This is accomplished by first connecting main power to the devices through a series resistor. After the precharge is complete main power is then directly connected to the devices and the series resisotr circuit is opened. The resistance value of the series resistor determines the precharge time. Lower resistance leads to faster precharge, but greater instaneous power, so calculations should be done to ensure the resistor can handle the expected power. 
 
 We use mosfets driven by a uP to connect GND through a series resistor to the devics. This mosfet remains on for the calculated precharge duration then turns off, thus disconnecting the path to ground through the series resistor. 
 
-### *Contactors:*
+### *Contactors*
 Our car has two contactors that control main power going to the motor controller and the MPPT. The 12v coils of these contactors are controlled by mosfets whose gates are driven by a uP. The mosfets connect the GND of the coils when turned on. Since the coils of the contactors are an inductive load, a fly back diode must be used in reverse bias with the mosfet to prevent the mosfets from being damaged by voltage spikes caused from the inductive load. 
 
 ### *Throttle Input*
