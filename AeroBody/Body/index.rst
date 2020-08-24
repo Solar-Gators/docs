@@ -1,6 +1,8 @@
 Body
 ====
 
+.. figure:: 
+
 The car kinda looks like a whale
 
 .. toctree::
