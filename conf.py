@@ -45,6 +45,8 @@ extensions = [
     'sphinx.ext.viewcode',
     'sphinx.ext.githubpages',
     'sphinx_rtd_theme',
+    'sphinxcontrib.httpdomain',
+    'sphinx_tabs.tabs',
     'recommonmark'
 ]
 
