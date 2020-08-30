@@ -24,7 +24,7 @@ If you're running windows and want to follow the linux tutorial, my suggestion i
       .. code-block:: Bash
         
         #Get Node sources
-        $ curl -sL https://deb.nodesource.com/setup_12.14 | sudo -E bash -
+        $ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
         #Now install node
         $ sudo apt-get install nodejs
       *note*: You may need to install curl if it's not already
