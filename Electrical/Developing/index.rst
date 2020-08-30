@@ -10,3 +10,4 @@ Every team has their own repositories and how they like to do things but here we
    ClickUp <ClickUp>
    Software <SoftwareDevelopment>
    Hardware <HardwareDevelopment>
+   Testing <Testing>
