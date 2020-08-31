@@ -9,3 +9,4 @@ The BMS subteam consists of Custom BMS, Startup, and Orion BMS
     :maxdepth: 1
     
     Custom BMS <CustomBMS>
+    Start Up <StartUp>
