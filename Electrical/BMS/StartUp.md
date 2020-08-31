@@ -2,3 +2,5 @@
 
 ## Overview
 The trip circuit is intended to interface with the Orion BMS 2 that provides both active and passive battery protection and control the operational states of the car. The trip circuit takes the Discharge Enable (DE), Multipurpose Enable (ME), Charge Enable (CE) and Charge Safety Enable (CSE) signals from the Orion and turns them into Trip (Trip_L) and Charge Trip (CTrip_L). Both Trip_L and CTrip_L are low true signals used to control operational states in the car. The signals from the BMS are open-drain, so 100k Ohm pull-down resistors are used to convert them into high-low logic levels. The BMS actively monitors temperatures, voltages, and current in the battery pack. Whenever these values are within the safety thresholds defined below, the BPS will sink a small current into the corresponding pins. Whether the pins are sinking current or have high impedance, determines if the car is in a safe state or fault state. For example, while in a safe state, the corresponding pins will sink current to a trip circuit, which sends a signal to the contactors, which allows power to flow from the main battery pack.
+
+## Something
