@@ -6,25 +6,116 @@ The code for this team is located in the [pit-gui](https://github.com/Solar-Gato
 
 
 ## Getting Started
+
+This is a brief guide that is broken down into steps meant for a variety of operating systems and skill levels. If you ever have trouble feel free to reach out to a senior member.
+
+### Install NodeJS
+
 First you need to install `node` v12.
 
-If you're running macOS, Linux or [Winows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (WSL). 
+If you're running windows and want to follow the linux tutorial, my suggestion is to download [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (WSL). It allows you to run a linux shell from windows easily.
+
+```eval_rst
+
+.. tabs::
+
+   .. tab:: Linux
+      
+      .. code-block:: Bash
+        
+        #Get Node sources
+        $ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+        #Now install node
+        $ sudo apt-get install nodejs
+      *note*: You may need to install curl if it's not already
+
+   .. tab:: Mac OSX
+
+      .. code-block:: Bash
+        
+        $ brew install node
+      
+      *note*: You will need to install brew for this to work, refer to `this article <https://changelog.com/posts/install-node-js-with-homebrew-on-os-x/>`_ on how to do that.
+
+      Alternatively you can download node's installer from their website, `link is here <https://nodejs.org/en/download/>`_.
+
+   .. tab:: Windows 10
+
+      The easiest way to install node on windows is to download the installer from their website. The link to their `download page is here <https://nodejs.org/en/download/>`_.
+
+```
+
+To verify that Node is installed, run the following command from command line.
 
 ```Bash
-$ curl -sL https://deb.nodesource.com/setup_12.14 | sudo -E bash -
+$ node -v
+v12.16.1
 ```
-*note*: You may need to install curl if it's not already
+As pictured above `v12.16.1` should be returned if node is correctly configured. If it does not get returned node may not be installed correctly or is not you path and therefore not recognized by your shell.
 
-Now install node
+### Install MySQL
 
-```Bash
-$ sudo apt-get install nodejs
+The next step is to download MySQL for the database. The steps for this will again depend on what OS you are running on.
+
+```eval_rst
+
+.. tabs::
+
+   .. tab:: Linux
+      
+      .. code-block:: Bash
+
+        $ sudo apt install mysql-server
+        #Run the security script:
+        $ sudo mysql_secure_installation
+      
+      *reference*: `How To Install MySQL on Ubuntu 18.04 <https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04>`_
+
+   .. tab:: Mac OSX
+
+      .. code-block:: Bash
+        
+        $ brew install mysql
+      
+      *note*: You will need to install brew for this to work, refer to `this article <https://changelog.com/posts/install-node-js-with-homebrew-on-os-x/>`_ on how to do that.
+
+      Alternatively you can download mysql's installer from their website, `link is here <https://dev.mysql.com/downloads/mysql/>`_.
+
+   .. tab:: Windows 10
+
+      The easiest way to install mysql on windows is to download the installer from their website. The link to their `download page is here <https://dev.mysql.com/downloads/installer/>`_.
 ```
+
+In order for our server to connect to mysql, we must create a user for it to login as. The server is configured to connect to mysql as `solargators` with no password. To create a MySQL user run a query. You can run queries in a variety of ways depending on what platform you are on. If you are on Linux/Mac then you can simply run `mysql` from the command line and run the queries. However if you're on windows then you will need to use a mysql client like MySQL work bench.
+
+To create a user run the following query.
+
+```MySQL
+CREATE USER 'solargators'@'localhost' IDENTIFIED BY '';
+```
+
+Now we need to give our user some permissions to access the database. Run the following query to do so.
+
+```MySQL
+GRANT ALL PRIVILEGES ON *.* TO 'solargators'@'localhost';
+```
+
+### Install NPM Dependencies & Start
 
 Now you need to install the dependencies, to do so run the following command from the root of the repository.
 
 ```Bash
 $ npm run install-all
+```
+
+Now we need to create the database. To do some run the following commands.
+
+```Bash
+$ cd backend
+# Create the database
+$ npm run create-db
+# Migrate the database
+$ npm run migrate
 ```
 
 To start the website in dev mode
@@ -76,13 +167,151 @@ The frontend is built on top of ReactJS utilizing the [Materialize](https://mate
 
 
 ## API Endpoints
+```eval_rst
+.. http:get:: /api/live/data
 
-TO DO
+    Retrieves the live telemetry data
 
-## Features
+    **Example request**:
 
-GPS
+    .. sourcecode:: JavaScript
 
-Live Telemetry
+        axios.get('/api/live/data')
 
-TO DO
+    **Example response**:
+
+    .. sourcecode:: json
+
+        {
+            "speed": {
+                "id":1,
+                "speed":10,
+                "createdAt":"2020-05-10T12:00:00.000Z",
+                "updatedAt":"2020-05-10T12:00:00.000Z"
+            },
+            "voltage":
+            {
+                "id":1,
+                "lowCellVoltage":20,
+                "highCellVoltage":30,
+                "avgCellVoltage":25,
+                "packSumVoltage":200,
+                "createdAt":"2020-05-10T12:00:00.000Z",
+                "updatedAt":"2020-05-10T12:00:00.000Z"
+            },
+            "duration":
+            {
+                "id":1,
+                "duration":10,
+                "createdAt":"2020-05-10T12:00:00.000Z",
+                "updatedAt":"2020-05-10T12:00:00.000Z"
+            },
+            "temperature":
+            {
+                "id":1,
+                "temperature":10,
+                "createdAt":"2020-05-10T12:00:00.000Z",
+                "updatedAt":"2020-05-10T12:00:00.000Z"
+            },
+            "stateofCharge":
+            {
+                "id":1,
+                "stateOfCharge":10,
+                "createdAt":"2020-05-10T12:00:00.000Z",
+                "updatedAt":"2020-05-10T12:00:00.000Z"
+            },
+            "consumption":
+            {
+                "id":1,
+                "speed":10,
+                "createdAt":"2020-05-10T12:00:00.000Z",
+                "updatedAt":"2020-05-10T12:00:00.000Z"
+            },
+            "panelPower":
+            {
+                "id":1,
+                "panelPower":10,
+                "createdAt":"2020-05-10T12:00:00.000Z",
+                "updatedAt":"2020-05-10T12:00:00.000Z"
+            },
+            "gps":
+            {
+                "id":1,
+                "heading":30,
+                "latitude":"29.6472579",
+                "longitude":"-82.3496962",
+                "speed":10,
+                "createdAt":"2020-05-10T12:00:00.000Z",
+                "updatedAt":"2020-05-10T12:00:00.000Z"
+            }
+        }
+
+.. http:get:: /api/graph/coord
+
+    Retrieves the live graph data
+
+    **Example request**:
+
+    .. sourcecode:: JavaScript
+
+        axios.get('/api/graph/coord')
+
+    **Example response**:
+
+    .. sourcecode:: json
+
+        {
+            "success": true,
+            "data": {
+                "id":1,
+                "heading":30,
+                "latitude":"29.6472579",
+                "longitude":"-82.3496962",
+                "speed":10,
+                "createdAt":"2020-05-10T12:00:00.000Z",
+                "updatedAt":"2020-05-10T12:00:00.000Z"
+            }
+        }
+
+.. http:post:: /api/bms
+
+    Creates BMS data
+
+    **Example request**:
+
+    .. sourcecode:: JavaScript
+
+        axios.post('/api/bms', {
+            "lowCellVoltage": 20,
+            "highCellVoltage": 30,
+            "avgCellVoltage": 25,
+            "packSumVoltage": 200
+        })
+
+    **Example response**:
+
+    .. sourcecode:: json
+
+        {}
+
+.. http:post:: /api/gps
+
+    Creates GPS data
+
+    **Example request**:
+
+    .. sourcecode:: JavaScript
+
+        axios.post('/api/gps', {
+            "heading":30,
+            "latitude":"29.6472579",
+            "longitude":"-82.3496962",
+            "speed":10
+        })
+
+    **Example response**:
+
+    .. sourcecode:: json
+
+        {}
+```
