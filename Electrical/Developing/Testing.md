@@ -1,4 +1,6 @@
 # Emulators
+## About
+Often times it is inconvienent, difficult or impossible to access equipment needed to test our drivers to aid this issue we have created a set of emmulators utilizing the Digital Analog Discovery board (DAD). This allows you to create a class in python that acts like the hardware you want to interface with. Currently the emulators support UART and CAN communications but it is not very difficult to add more or even custom protocols.
 ## How to install
 If you plan on using the DAD hardware make sure you have the SDK downloaded (Waveforms).
 If you plan on using the CANAdapter make sure you know what serial port it is connected to (no need to download anything).
