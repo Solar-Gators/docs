@@ -293,7 +293,7 @@ This error is occurring because the data link layer expects the first byte to be
 
 ### Emulation
 
-We have built an [emulation library](https://github.com/Solar-Gators/emulators) for emulating transmissions using the DAD board. See [Testing](/Electrical/developing/Testing.md)
+We have built an [emulation library](https://github.com/Solar-Gators/emulators) for emulating transmissions using the DAD board. See [Testing](../Developing/Testing.md)
 
 ### RF900x Raspberry Shield
 
