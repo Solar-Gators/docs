@@ -25,22 +25,22 @@ To get the branch on your computer:
 3. Type `git checkout branchName` where you replace branchName by pasting or typing the branch name you would like to check out.
 4. Start developing! **Make sure to commit often and leave meaningful commit messges.**
 
-# STATUSES
+## Statuses
 
-## ACTIVE STATUSES
+### Active
 *   **OPEN -** Not being worked on
 *   **BLOCKED -** Not being worked on and is blocked by another task (other task must be completed)
 *   **IN PROGRESS -** In development, design, or coding
 *   **REVIEW -** Waiting for system and group review, make sure no issues with PCB and with other systems
 
-## DONE STATUSES
+### Done
 *   **READY -** Done and waiting for parts to be purchase and delivered
 *   **TESTING -** Ready to be put together, soldered, built and be test
 
-## CLOSED STATUS
+### Closed
 *   **CLOSED -** Either finished or split into other tasks
 
-# LISTS
+## Lists
 
 Lists are the sprints, backlog, bugs, etc. which list the task that must be completed.
 
