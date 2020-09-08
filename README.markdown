@@ -1,5 +1,7 @@
 # Solar Gators Master Documentation
 
+[![Documentation Status](https://readthedocs.org/projects/solar-gators-docs/badge/?version=latest)](https://docs.ufsolargators.org/en/latest/?badge=latest)
+
 Documentation url: https://solar-gators-docs.readthedocs.io/
 
 This repository is the master documentation for solar gators. The docs are hosted by [Read The Docs](https://readthedocs.org/) for free. Any updates made to this repo will be automatically deployed. They are generated using [sphinx](https://www.sphinx-doc.org/en/master/) with the [sphinx_rtd_theme](https://github.com/readthedocs/sphinx_rtd_theme) template.
