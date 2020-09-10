@@ -66,8 +66,8 @@ The next step is to download MySQL for the database. The steps for this will aga
       .. code-block:: Bash
 
         $ sudo apt install mysql-server
-        #Run the security script:
-        $ sudo mysql_secure_installation
+        # Start mysql server
+        $ sudo /etc/init.d/mysql start
       
       *reference*: `How To Install MySQL on Ubuntu 18.04 <https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04>`_
 
