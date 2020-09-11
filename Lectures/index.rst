@@ -2,7 +2,7 @@ Lectures
 ========
 
 Git and Github guide
-========
+--------------------
 
 .. raw:: html
 
