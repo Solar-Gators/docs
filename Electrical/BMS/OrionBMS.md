@@ -5,5 +5,7 @@ The Orion BMS is a pre-manufactured device that can be purchased, which manages 
 This page will be updated frequently with more detail on the nooks and crannies of the Orion BMS. But as an EE/CE student, get in the habit of checking documentation, it'll be useful for your future classes and career. Below is some documentation on how the Orion works.
 
 [Operation Manual](https://www.orionbms.com/manuals/pdf/orionbms2_operational_manual.pdf)
+
 [Actually Programming It](https://www.orionbms.com/manuals/utility_o2/)
+
 [How to Connect to the Vehicle](https://www.orionbms.com/manuals/pdf/orionbms2_wiring_manual.pdf)
