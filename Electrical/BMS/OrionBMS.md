@@ -1,0 +1,1 @@
+The Orion BMS is a device that can be purchased online, which manages the battery pack through the use of: 1 hall-effect current sensor, temperature sensors in the form of thermistors, individual cell voltage taps, and a full pack voltage tap. 
