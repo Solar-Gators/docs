@@ -6,7 +6,7 @@ Battery cells often have limits as to how much current can be drawn from them wi
 The BMS subteam consists of Custom BMS, Startup, and Orion BMS
 
 .. toctree::
-    :maxdepth: 3
+    :maxdepth: 1
     
     Custom BMS <CustomBMS>
     Orion BMS <OrionBMS>
