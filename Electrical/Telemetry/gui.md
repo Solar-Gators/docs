@@ -66,8 +66,8 @@ The next step is to download MySQL for the database. The steps for this will aga
       .. code-block:: Bash
 
         $ sudo apt install mysql-server
-        #Run the security script:
-        $ sudo mysql_secure_installation
+        # Start mysql server
+        $ sudo /etc/init.d/mysql start
       
       *reference*: `How To Install MySQL on Ubuntu 18.04 <https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04>`_
 
@@ -166,6 +166,98 @@ The frontend is built on top of ReactJS utilizing the [Materialize](https://mate
     └── ...
 
 
+## SQL Schema Migrations
+
+Sometimes we would like to change the schema of the database, create an extra table, etc. To do so we must create what are called [SQL Schema Migrations](https://en.wikipedia.org/wiki/Schema_migration). We use [sequelize-cli](https://www.npmjs.com/package/sequelize-cli) for migrations, check out [their documentation](https://sequelize.org/master/manual/migrations.html) for more details on how to create migrations. We will go over how to make a basic migration.
+
+First we need to create a sequelize migration script to do so, `cd` into the `/backend` directory, replace the `${NAME}` with a custom name of your choosing and run this command.
+
+```Bash
+$ npx sequelize-cli migration:generate --name ${NAME}
+```
+
+This will generate an empty migration skeleton in the `/backend/migrations` directory that looks like the following.
+
+```JavaScript
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+  },
+  down: async (queryInterface, Sequelize) => {
+  }
+};
+```
+
+We will need to define our migration here using their api. [Check their documentation](https://sequelize.org/master/manual/migrations.html#migration-skeleton) for details on how to use it. The following is an example of creating a table called `Instance`.
+
+```JavaScript
+module.exports = {
+  up: async (queryInterface, Sequelize) => {
+    await queryInterface.createTable('Instances', {
+      name: {
+        type: Sequelize.STRING,
+        allowNull: false,
+        primaryKey: true
+      },
+      type: {
+        type: Sequelize.STRING
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      },
+      updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE
+      }
+    });
+  },
+  down: async (queryInterface, Sequelize) => {
+    await queryInterface.dropTable('Instances');
+  }
+};
+```
+
+It is important that we define the `down` to undo what ever the `up` migration is doing. In this case we just need to drop the table. Once we believe the migration is complete then run the following command to update the database.
+
+```Bash
+$ npm run migrate
+```
+
+There should be no errors in the console after running this command. If there is then inspect the migration for it's accuracy. The next step is to update the sequelize model in the `/backend/models` folder. For the above example we'd have to create a file called `instance.js` with the following code in it.
+
+```JavaScript
+'use strict';
+const {
+  Model
+} = require('sequelize');
+module.exports = (sequelize, DataTypes) => {
+  class Instance extends Model {
+    /**
+     * Helper method for defining associations.
+     * This method is not a part of Sequelize lifecycle.
+     * The `models/index` file will call this method automatically.
+     */
+    static associate(models) {
+      // define association here
+    }
+  };
+  Instance.init({
+    name: {
+      type: DataTypes.STRING,
+      primaryKey: true,
+      allowNull: false
+    },
+    type: DataTypes.STRING
+  }, {
+    sequelize,
+    modelName: 'Instance',
+  });
+  return Instance;
+};
+```
+
+Now we are done! We have created a migration. Check the official [sequelize-cli documentation](https://sequelize.org/master/manual/migrations.html) for more details.
+
 ## API Endpoints
 ```eval_rst
 .. http:get:: /api/live/data
@@ -245,6 +337,7 @@ The frontend is built on top of ReactJS utilizing the [Materialize](https://mate
                 "updatedAt":"2020-05-10T12:00:00.000Z"
             }
         }
+
 
 .. http:get:: /api/graph/coord
 
