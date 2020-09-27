@@ -4,8 +4,8 @@ Solar Array
 More power!
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 1
 
-Overviews
-Media
+Documentation <Documentation>
+
 

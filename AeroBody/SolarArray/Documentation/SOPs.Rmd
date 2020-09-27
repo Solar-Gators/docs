@@ -1,0 +1,18 @@
+---
+title: "SOPs"
+output: html_document
+---
+
+
+``````{r setup}
+knitr::opts_chunk$set(echo = TRUE)
+
+knitr::include_graphics(path.expand("~/Solar Gators Repo/Solar_Cell_Soldering_SOP.pdf"))
+
+``````
+
+```{r, echo=TRUE, out.width="50%", fig.cap="Soldering SOP."}
+
+knitr::include_graphics(path.expand("~/Solar Gators Repo/Solar_Cell_Soldering_SOP.pdf"))
+
+```
