@@ -29,6 +29,7 @@ Below is a list of docs for our Electrical subteams.
    MPPT <Electrical/MPPT/index>
    Website <Electrical/Website/index>
    Developing <Electrical/Developing/index>
+   Code Templates <Electrical/CodeTemplates/index>
 
 Below is a list of docs for our Mechanical subteams.
 
