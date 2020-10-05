@@ -14,3 +14,9 @@ Diagram of how Powerboard connects with other components below.
 
 .. figure:: https://docs.google.com/drawings/d/e/2PACX-1vSeXTQNHIGB7T7mL5e5OWgiq1vJut5Sc81cvE3aRfOSItKJBOGIAZoW8D9zs1lG9XofgfAeyY3t12wp/pub?w=904&h=586
 Can be editted on: `Google Drawing <https://docs.google.com/drawings/d/1IIuszGmNeKH5NFBfkuqnnVxVqCXdr9mN4nBMk3Grny0/edit?usp=sharing>`_
+
+.. toctree::
+   :maxdepth: 1
+
+   PCB and Components <PCB>
+   
