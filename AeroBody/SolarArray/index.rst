@@ -6,6 +6,6 @@ More power!
 .. toctree::
    :maxdepth: 1
 
-Documentation <Documentation>
+	Documentation  <Documentation>
 
 
