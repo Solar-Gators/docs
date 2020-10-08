@@ -15,7 +15,6 @@ will be put out.
 .. toctree::
    :maxdepth: 1
 
-   PowerBoard 2019-20 Summary <PostMortem>
    PCB and Components <PCB>
 
 Trip State
