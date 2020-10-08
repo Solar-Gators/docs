@@ -3,7 +3,7 @@ title: "SOPs"
 output: html_document
 ---
 
-Below are the Standard Operating Procedures (SOPs) for Solar Array manufacturing. Make sure you review them before coming into the workshop! 
+Below are the Standard Operating Procedures (SOPs) for Solar Array manufacturing. Make sure you review them as needed before coming into the workshop! 
 
 [Encapsulation SOP](https://dochub.com/bookworm142013/orO7lgeVLJqqWW1RjMP2p5/encapsulation-sop-pdf?dt=igREcRp1CEz3hhAWkhU3)
 
