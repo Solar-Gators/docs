@@ -2,7 +2,7 @@
 
 Important information for new team members can be found here!
 
-##Fluid Dynamics
+## Fluid Dynamics
 
 Fluid dynamics is the study that describes the way fluids flow, with many different subsections based on the type of fluid studied. For our applications, we are primarily concerned with the study of airflow, better known as aerodynamics. Our primary purpose for aerodynamics is to reduce drag - the atmosphere’s resistance on our vehicle as it attempts to move through the atmosphere. Understanding the principles found here will help you create a body with minimal drag, thus increasing its overall performance.
 
