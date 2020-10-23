@@ -27,6 +27,7 @@ Below is a list of docs for our Electrical subteams.
    Power Board <Electrical/PowerBoard/index>
    Motor Controller <Electrical/MotorController/index>
    MPPT <Electrical/MPPT/index>
+   Knowledge Retention <Electrical/KnowledgeRetention/index>
    Website <Electrical/Website/index>
    Developing <Electrical/Developing/index>
    Code Templates <Electrical/CodeTemplates/index>
