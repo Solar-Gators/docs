@@ -1,11 +1,12 @@
 Solar Array
 ====
 
-More power!
+.. figure:: 
+
+More Power!
 
 .. toctree::
    :maxdepth: 1
 
-	Documentation  <Documentation>
-
-
+   Documentation <Documentation>
+     

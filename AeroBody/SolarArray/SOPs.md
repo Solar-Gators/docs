@@ -1,6 +1,4 @@
----
-title: "SOPs"
-output: html_document
+SOPs
 ---
 
 Below are the Standard Operating Procedures (SOPs) for Solar Array manufacturing. Make sure you review them as needed before coming into the workshop! 
