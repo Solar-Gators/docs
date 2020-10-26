@@ -48,7 +48,7 @@ After cloning run the following command from the root of the repository.
 $ pip install -r requirements.txt
 ```
 
-The project comes configured with a make command that works with windows, OSX (not tested) and Linux. There are various commands that can be used run `make help` to see them all. The command we are most interested in is the following command. 
+The project comes configured with a make command that works with Windows, OSX, and Linux. There are various commands that can be used run `make help` to see them all. The command we are most interested in is the following command. 
 
 ```Bash
 $ make livehtml
