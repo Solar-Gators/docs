@@ -1,7 +1,6 @@
 Body
 ====
 
-.. figure:: 
 
 The car kinda looks like a whale
 
@@ -10,4 +9,4 @@ The car kinda looks like a whale
 
    Knowledge Retention <knowledge>
    Documentation <documentation>
-   
+   Surface Courses <surfacing_course>
