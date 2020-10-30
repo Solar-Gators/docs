@@ -26,15 +26,15 @@ if errorlevel 9009 (
 	exit /b 1
 )
 
-%SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+pipenv run %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
 goto end
 
 :help
-%SPHINXBUILD% -M help %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+pipenv run %SPHINXBUILD% -M help %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
 goto end
 
 :livehtml
-sphinx-autobuild -b html %SPHINXOPTS% %SOURCEDIR% %BUILDDIR%/html
+pipenv run sphinx-autobuild -b html %SPHINXOPTS% %SOURCEDIR% %BUILDDIR%/html
 
 :end
 popd

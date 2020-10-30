@@ -1,0 +1,16 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+sphinx-autobuild = "*"
+sphinx-rtd-theme = "*"
+recommonmark = "*"
+"sphinxcontrib.httpdomain" = "*"
+sphinx-tabs = "*"
+
+[requires]
+python_version = "3.9"
