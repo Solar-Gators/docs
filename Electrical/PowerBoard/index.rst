@@ -2,6 +2,16 @@ Power Board
 ====
 The powerboard serves to step down the 100V supplied from the car's battery to lower voltages, allowing other electrical subsystems to utilize the voltages that they need as an input. The board takes in voltage inputs from the battery pack, the solar array, and the supplementary batteries at 100V and 12V. These voltages are then filtered out through the board and stepped down to 12V, 5V and 3.3V. The board also establishes the multiple power states of the car in terms of the trip state and the main state.
 
+From `actpower.com <https://www.actpower.com/educational/what-is-a-power-supply-and-how-does-it-work/>`_, 
+"The power supply works to convert the power from the source into the correct format and voltage." 
+The car has two power sources: the solar cells charging a 100V battery and a 12V supplemental battery. 
+Thus the power board has to manage those two sources while supplying power to other systems whose components 
+only need maybe 5V. Most of the other systems have to be powered through the power board PCB which is why 
+it is so important.
+
+Currently we only have the summary from last year but soon more resources detailing the power board system 
+will be put out.
+
 .. toctree::
    :maxdepth: 1
 
@@ -19,3 +29,4 @@ Diagram of how Powerboard connects with other components below.
 
 .. figure:: https://docs.google.com/drawings/d/e/2PACX-1vSeXTQNHIGB7T7mL5e5OWgiq1vJut5Sc81cvE3aRfOSItKJBOGIAZoW8D9zs1lG9XofgfAeyY3t12wp/pub?w=904&h=586
 Can be editted on: `Google Drawing <https://docs.google.com/drawings/d/1IIuszGmNeKH5NFBfkuqnnVxVqCXdr9mN4nBMk3Grny0/edit?usp=sharing>`_
+
