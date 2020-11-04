@@ -56,3 +56,16 @@ $ make livehtml
 ```
 
 This command will start a local server on `http://localhost:8000`. Navigate to the URL to see the locally hosted site! Any changes you make to the source will automatically be reflected on your local site.
+
+## Adding a New Package
+
+If a new package is desired, then run the following command after replacing `${PACKAGE_NAME}` with the package desired.
+```Bash
+$ pipenv install ${PACKAGE_NAME}
+```
+
+ReadTheDocs requires there to be a requirements.txt file in the repository for it to build. To generate this file run the following command.
+
+```Bash
+$ pipenv lock -r > requirements.txt
+```
