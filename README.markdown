@@ -32,7 +32,7 @@ This option is good for making small changes to existing pages, but making new p
 ### Editing locally
 
 Required packages:
-- Python 3.7
+- Python 3.6
 - Pip
 - Git or GitHub Desktop or Any other GIT provider 
 
