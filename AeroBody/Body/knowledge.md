@@ -10,7 +10,7 @@ Drag has everything to do with the shape of the object you are moving. If an obj
 
 Drag is a key source of power draw, alongside rolling resistance. However, drag is a function of velocity squared, whereas rolling resistance is only a function of velocity, so the effects of increased aerodynamic are much more valuable (Fig. 1).
 
-![Import Project](/_static/knowledge/powerdrivegraph.PNG)
+![Import Project](../../_static/knowledge/powerdrivegraph.PNG)
 
 Considering the airfoil example and applying it to the car design process, we can see that there are multiple factors affecting drag. Separating these out, we can consider four primary components of the drag:
 
