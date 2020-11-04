@@ -12,6 +12,8 @@ set BUILDDIR=_build
 
 if "%1" == "" goto help
 if "%1" == "livehtml" goto livehtml
+if "%1" == "legacy-livehtml" goto legacy-livehtml
+if "%1" == "legacy" goto legacy
 
 %SPHINXBUILD% >NUL 2>NUL
 if errorlevel 9009 (
@@ -31,6 +33,14 @@ goto end
 
 :help
 pipenv run %SPHINXBUILD% -M help %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+goto end
+
+:legacy
+%SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+goto end
+
+:legacy-livehtml
+sphinx-autobuild -b html %SPHINXOPTS% %SOURCEDIR% %BUILDDIR%/html
 goto end
 
 :livehtml
