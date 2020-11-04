@@ -22,14 +22,14 @@ All of the documentation is written in markdown (.md or .markdown) and reStructu
 
 There are two options for documenting code.
 
-- Commiting directly from GitHub.
+- committing directly from GitHub.
 - Cloning the repository and making changes locally.
 
-### Editting from GitHub
+### Editing from GitHub
 
 This option is good for making small changes to existing pages, but making new pages is a little more complicated using this method. At the top of every page is "Edit on GitHub" link to directly edit the pages on GitHub.
 
-### Editting locally
+### Editing locally
 
 Required packages:
 - Python 3.7
