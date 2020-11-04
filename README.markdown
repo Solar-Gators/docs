@@ -45,8 +45,7 @@ $ git clone https://github.com/Solar-Gators/docs
 After cloning run the following command from the root of the repository.
 
 ```Bash
-$ pip install --user pipx
-$ pipx install pipenv
+$ pip install --user pipenv
 $ pipenv install
 ```
 
