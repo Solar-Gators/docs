@@ -64,7 +64,7 @@ If a new package is desired, then run the following command after replacing `${P
 $ pipenv install ${PACKAGE_NAME}
 ```
 
-ReadTheDocs requires there to be a requirements.txt file in the repository for it to build. To generate this file run the following command.
+Read The Docs requires there to be a requirements.txt file in the repository for it to build. To generate this file run the following command.
 
 ```Bash
 $ pipenv lock -r > requirements.txt
