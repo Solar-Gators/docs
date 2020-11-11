@@ -8,5 +8,5 @@ More Power!
 .. toctree::
    :maxdepth: 1
 
-   Documentation <Documentation>
+   Manufacturing <Manufacturing>
      
