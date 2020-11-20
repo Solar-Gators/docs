@@ -1,3 +1,15 @@
 # Documentation
+## Solidworks Surfacing Course
+[Surfacing Course](surfacing_course.md)
 
-Design description and documentation can go here
+## Car 3
+
+### SOPs
+
+### Star CCM+
+[StarCCM Instructions](star.md)
+
+### Pictures/Videos
+
+### Miscellaneous/Calculations
+

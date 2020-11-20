@@ -193,6 +193,6 @@ def setup(app):
         'enable_math': True,
         'enable_inline_math': True,
         'enable_eval_rst': True,
-        'enable_auto_doc_ref': True,
+        'enable_auto_doc_ref': False,
     }, True)
     app.add_transform(AutoStructify)
