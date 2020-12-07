@@ -6,7 +6,7 @@ Altium schematics, like software, are stored in the organization's GitHub heres 
 For PCBs the naming convention is carName-subname-PCB (ex. cielo-telemetry-PCB, cielo-lights-PCB). Cars will often reuse improved versions of previous PCBs; however, please make a new repository when working for a new car that way we can easily distigush what is used where.  
 **To add a new altium project to git**
 1. Make sure you are a member of the [Solar-Gators GitHub organization](https://github.com/Solar-Gators).
-2. Create navigate to your existing project. **Note:** How to make an altium project can be found [here](TODO).
+2. Create navigate to your existing project. **Note:** How to make an altium project can be found [here](https://example.com/) TODO.
 3. Open git bash, command prompt (Windows) or terminal (OSX) and run `git init`
 4. Create a new repository by clicking on the new repository button.
 ![Create Repository](/_static/processes/new_repo_button.png)

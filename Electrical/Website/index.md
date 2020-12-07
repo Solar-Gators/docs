@@ -1,6 +1,6 @@
 # Maintaining Website
 
-We have a website located at [ufsolargators.org](ufsolargators.org) which contains information about our organization for sponsors and other interested parties to see. It is hosted for free using [GitHub Pages](https://pages.github.com/) and has an API hosted on AWS.
+We have a website located at [ufsolargators.org](https://ufsolargators.org) which contains information about our organization for sponsors and other interested parties to see. It is hosted for free using [GitHub Pages](https://pages.github.com/) and has an API hosted on AWS.
 
 The website was built using React and the repository can be found on our GitHub organization called [Advertisement-Website](https://github.com/Solar-Gators/Advertisement-Website). The code for the API is also under the GitHub org, however it is private due to security concerns. Please request access from a senior member and they can get you that.
 
