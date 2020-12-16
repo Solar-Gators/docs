@@ -13,30 +13,17 @@ To make our body shell, we used a resin infusion process with the help of our sp
 
 Our laminate sequence was a sandwich core structure with one ply of carbon fiber on each side of a layer of 3mm. Lantor Coremat Xi. We used a 2x2 twill weave for the outside layer of carbon fiber for optimal surface finish and used a unidirectional weave for the interior carbon fiber layer to minimize costs. We used Inkamesh as our flowmedia and implemented scribe lines to differentiate between our part and flange. Multiple resin ports were used to account for the size of our layup.
 
-### Pictures
-
-![Surface Prep](/AeroBody/Composites/Picture7.jpg)
-Applying Partall Wax to Mold Surface
-
-![Carbon Fiber](/Aerobody/Composites/Picture8.jpg)
-Applying unidirectional carbon fiber to finished mold
-
-![Top body infusion](/AeroBody/Composites/Picture5.jpg)
-Infusion setup for top body mold
-
-![Bottom body infusion](/AeroBody/Composites/Picture6.jpg)
-Infusion setup for bottom body mold
+### [Pictures](PicturesCielo2.md)
 
 ## Car Three
-The construction of Car 3's body shell for the 2019-2020 cycle has been repeatedly delayed for multiple reasons. Our team has had to transition from manufacturing a body shell with our Tavares sponsor (who guided us through the entire resin infusion process while sponsoring all necessary materials for mold construction, a portion materials needed for resin infusion, and a 5-axis CNC service) to manufacturing our body shell entirely in-house while maintaining the quality of our previous car. This presented multiple challenges to the team: (1) finding a way to manufacture our molds without exceeding our budget, (2) creating our own composites manufacturing process that would work with our shop's limited resources and budget, (3) setting up a training protocol ensured that leadership and team members had sufficient hands-on experience with composites. Manufacturing was further complicated due to the Covid-19 pandemic, which resulted in the team's access to our shop being delayed until October 2020.
 
-Our body shell will be made through vacuum-bagging instead of resin infusion. This is because resin infusion is a difficult process that requires plenty of prior composites experience to execute correctly. Our team already has experience with vacuum-bagging and have all necessary materials sponsored. We are making our molds out of XPS Foamular 250, which is economical while having sufficient density to withstand CNC milling and yield an acceptable surface finish. CNC milling will be done with Altavian, a local sponsor. We are currently finalizing our mold design with our CNC sponsor and expect to have our mold done by early February. 
+The construction of Car 3's body shell for the 2019-2020 cycle has been repeatedly delayed for multiple reasons. Our team has had to transition from manufacturing a body shell with a sponsor who guided us through the resin infusion process while sponsoring all necessary materials for mold construction and a 5-axis CNC service) to manufacturing our body shell entirely in-house while maintaining the quality of our previous design. This presented multiple challenges to the team: **(1)** planning the manufacturing and surface preparation of our mold **(2)** creating our own composites manufacturing process that would work with our resources, **(3)** setting up a training protocol ensured that leadership and team members had sufficient hands-on experience with composites. Manufacturing was further complicated due to the Covid-19 pandemic, which resulted in the team's access to our shop being delayed until October 2020. Our team has met our design challenges through a combination of research and hands-on experience; we are expecting to begin manufacturing our body shell in the Spring 2020 semester.
 
-In the meantime, we used our limited time in the shop this semester to start manufacturing ribbing components. We have been experimenting with the amount of resin used in our layups in order to determine the optimal carbon fiber to resin ratio for our body shell.
+We are making our molds out of XPS Foamular 250, which is economical while having sufficient density yield an acceptable surface finish from CNC milling with a local sponsor. We decided to construct a straight to negative mold by milling a cavity out of stacked foam sheets to ensure an optimal surface finish while avoiding the expense and logistics involved in the conventional process of pulling a fiberglass negative mold from a positive plug. Composite material is then laid up inside the mold to make the final shell. A vacuum-bagging system will be used to draw out excess resin and improve the composite’s strength to weight ratio. 
 
-### Pictures
+To ensure proper mold design , it was important for us to understand how our CAD design would be translated through a CNC program and how milled into the foam and how to ensure proper **draft angles**. A negative draft angle will make manufacturing extremely hard, if not impossible. We are currently finalizing our mold design with our CNC sponsor and expect to have our mold done by the end of the spring 2020 semester. 
 
-![Team Laying up Panel](/AeroBody/Composites/Picture10.jpg)
+We used our limited time in the shop in the Fall 2020 semester to start manufacturing our ribbing components. We plan to waterjet our CAD-designed profiles out of vacuum-bagged sandwich core carbon fiber panels. We have been experimenting with the amount of resin used in our layups in order to determine the optimal carbon fiber to resin ratio for our body shell.
 
-![Carbon Fiber Panel](/AeroBody/Composites/Picture11.jpg)
+### [Pictures](PicturesCar3.md)
 
