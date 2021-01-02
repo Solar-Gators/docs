@@ -5,10 +5,10 @@ Our team is constantly striving to improve the manufacturing process for our bod
 ## SOPs
 Our standard operation procedures for working with composite materials in our shop are listed here:
 
-* [Plug Surfacing](https://github.com/Solar-Gators/docs/blob/master/AeroBody/Composites/plugprep.pdf) 
-* [Fiberglass Molding](https://github.com/Solar-Gators/docs/blob/master/AeroBody/Composites/fiberglassmolding.pdf)
-* [Epoxy Resin Preparation](https://github.com/Solar-Gators/docs/blob/master/AeroBody/Composites/epoxyresin.pdf)
-* [Polyester Resin Preparation](https://github.com/Solar-Gators/docs/blob/master/AeroBody/Composites/polyesteresin.pdf)
+* [Plug Surfacing](/_static/composites/plugprep.pdf)
+* [Fiberglass Molding](/_static/composites/fiberglassmolding.pdf)
+* [Epoxy Resin Preparation](/_static/composites/epoxyresin.pdf)
+* [Polyester Resin Preparation](/_static/composites/polyesteresin.pdf)
 
 ## Research
 
