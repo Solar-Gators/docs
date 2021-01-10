@@ -7,7 +7,7 @@ In addition to the 4 BMS sourced signals, there's also 12 Main and 12 Trip. 12 T
 ## Startup Circuit
 ### Schematic
 Here's a schematic of the current Startup Circuit:
-![Startup](Electrical/BMS/Startup Board.jpg)
+![Startup](/_static/telemetry/Startup Board.jpg)
 ### Startup Circuit Explained
 The startup circuit (sometimes referred to as trip circuit) is meant to use digital logic to convert the signals discussed earlier in the introduction, to two active low signals, Trip and CTrip. Active low means that the signal is true when the signal is 0, or low. As discussed in the BMS section, when it is determined that it's safe to start the vehicle, both ME and DE will be active, and will sink current. At this point, the driver may press a startup button that will connect 12M to 12T temporarily, which finally makes all three signals active, and makes Trip active. Trip going active causes the contactors to close, connecting power to the vehicle, and now 12M is sourced from the main pack. 
 Our Trip signal also controls a strobe light, because, as the name implies, this signal represents the car having tripped in some way. The way the current startup board is designed, this means that until the start button is pressed, the strobe will appear to indicate that the car is in unsafe conditions and in a trip state, when this may not be the case. However, this design is necessary, as it allows the driver to push a 'kill-switch' if they think something is wrong, and prevents the car from immediately restarting unless the driver pushes the start button. 
