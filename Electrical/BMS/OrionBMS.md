@@ -17,6 +17,6 @@ This page will be updated frequently with more detail on the nooks and crannies 
 
 [Operation Manual](https://www.orionbms.com/manuals/pdf/orionbms2_operational_manual.pdf)
 
-[Actually Programming It](https://www.orionbms.com/manuals/utility_o2/)
+[Utility Manual (Guide to Programming Orion)](https://www.orionbms.com/manuals/utility_o2/)
 
-[How to Connect to the Vehicle](https://www.orionbms.com/manuals/pdf/orionbms2_wiring_manual.pdf)
+[Wiring Manual](https://www.orionbms.com/manuals/pdf/orionbms2_wiring_manual.pdf)
