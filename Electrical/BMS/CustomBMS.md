@@ -17,3 +17,6 @@ Although this method is great for a rough estimate, there are certain events tha
 A battery module includes multiple individual cells, all of which are wired in parallel. This has some advantages, including making it easier to replace if one goes faulty. However, a downside is that each cell will exhibit different charge - recharge behaviors. This leads to an unbalanced distribution of charge between cells, and eventually one cell may recharge before the others. For safety, we can't continue to charge the entire battery module, and we must stop recharging. This is a loss of efficiency, as there's space in the other modules which could've been used to power the vehicle. This is why we use cell balancing. If the BMS detects a cell that has a greater amount of charge than the rest, it's capable of sending excess charge into a shunt resistor.
 
 We're hoping to implement a form of active cell balancing, in which we can direct excess charge to other cells, thereby increasing efficiency even more.
+
+### Hello World
+This is a test
