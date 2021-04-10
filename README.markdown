@@ -22,17 +22,17 @@ All of the documentation is written in markdown (.md or .markdown) and reStructu
 
 There are two options for documenting code.
 
-- Commiting directly from GitHub.
+- committing directly from GitHub.
 - Cloning the repository and making changes locally.
 
-### Editting from GitHub
+### Editing from GitHub
 
 This option is good for making small changes to existing pages, but making new pages is a little more complicated using this method. At the top of every page is "Edit on GitHub" link to directly edit the pages on GitHub.
 
-### Editting locally
+### Editing locally
 
 Required packages:
-- Python 3.7
+- Python 3.6
 - Pip
 - Git or GitHub Desktop or Any other GIT provider 
 
@@ -45,7 +45,8 @@ $ git clone https://github.com/Solar-Gators/docs
 After cloning run the following command from the root of the repository.
 
 ```Bash
-$ pip install -r requirements.txt
+$ pip install --user pipenv
+$ pipenv install
 ```
 
 The project comes configured with a make command that works with Windows, OSX, and Linux. There are various commands that can be used run `make help` to see them all. The command we are most interested in is the following command. 
@@ -55,3 +56,16 @@ $ make livehtml
 ```
 
 This command will start a local server on `http://localhost:8000`. Navigate to the URL to see the locally hosted site! Any changes you make to the source will automatically be reflected on your local site.
+
+## Adding a New Package
+
+If a new package is desired, then run the following command after replacing `${PACKAGE_NAME}` with the package desired.
+```Bash
+$ pipenv install ${PACKAGE_NAME}
+```
+
+Read The Docs requires there to be a requirements.txt file in the repository for it to build. To generate this file run the following command.
+
+```Bash
+$ pipenv lock -r > requirements.txt
+```
