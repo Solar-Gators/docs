@@ -18,5 +18,10 @@ A battery module includes multiple individual cells, all of which are wired in p
 
 We're hoping to implement a form of active cell balancing, in which we can direct excess charge to other cells, thereby increasing efficiency even more.
 
+<<<<<<< HEAD
 ### Hello Test
 This is a world
+=======
+### Hello World
+This is a test
+>>>>>>> PowerboardPostPortem
