@@ -35,10 +35,10 @@ Below is a list of docs for our Mechanical subteams.
    :maxdepth: 1
    :caption: Mechanical
 
-   Suspension <Mechanical/Suspension/index>
-   Chassis <Mechanical/Chassis/index>
-   Brakes <Mechanical/Brakes/index>
    Battery Box <Mechanical/BatteryBox/index>
+   Brakes <Mechanical/Brakes/index>
+   Chassis <Mechanical/Chassis/index>
+   Suspension <Mechanical/Suspension/index>
 
 Below is a list of docs for our Aero-Body subteams.
 
