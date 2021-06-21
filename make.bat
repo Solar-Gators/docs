@@ -5,7 +5,7 @@ pushd %~dp0
 REM Command file for Sphinx documentation
 
 if "%SPHINXBUILD%" == "" (
-	set SPHINXBUILD=sphinx-build
+	set SPHINXBUILD=python -m sphinx-build
 )
 set SOURCEDIR=.
 set BUILDDIR=_build
@@ -28,11 +28,11 @@ if errorlevel 9009 (
 	exit /b 1
 )
 
-pipenv run %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+python -m pipenv run %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
 goto end
 
 :help
-pipenv run %SPHINXBUILD% -M help %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+pythin -m pipenv run %SPHINXBUILD% -M help %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
 goto end
 
 :legacy
@@ -40,11 +40,11 @@ goto end
 goto end
 
 :legacy-livehtml
-sphinx-autobuild -b html %SPHINXOPTS% %SOURCEDIR% %BUILDDIR%/html
+python -m sphinx-autobuild -b html %SPHINXOPTS% %SOURCEDIR% %BUILDDIR%/html
 goto end
 
 :livehtml
-pipenv run sphinx-autobuild -b html %SPHINXOPTS% %SOURCEDIR% %BUILDDIR%/html
+python -m pipenv run sphinx-autobuild -b html %SPHINXOPTS% %SOURCEDIR% %BUILDDIR%/html
 
 :end
 popd
