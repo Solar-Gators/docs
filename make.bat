@@ -28,11 +28,11 @@ if errorlevel 9009 (
 	exit /b 1
 )
 
-python -m pipenv run %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+python3 -m pipenv run %SPHINXBUILD% -M %1 %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
 goto end
 
 :help
-pythin -m pipenv run %SPHINXBUILD% -M help %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
+python3 -m pipenv run %SPHINXBUILD% -M help %SOURCEDIR% %BUILDDIR% %SPHINXOPTS%
 goto end
 
 :legacy
@@ -40,11 +40,11 @@ goto end
 goto end
 
 :legacy-livehtml
-python -m sphinx-autobuild -b html %SPHINXOPTS% %SOURCEDIR% %BUILDDIR%/html
+python3 -m sphinx-autobuild -b html %SPHINXOPTS% %SOURCEDIR% %BUILDDIR%/html
 goto end
 
 :livehtml
-python -m pipenv run sphinx-autobuild -b html %SPHINXOPTS% %SOURCEDIR% %BUILDDIR%/html
+python3 -m pipenv run sphinx-autobuild -b html %SPHINXOPTS% %SOURCEDIR% %BUILDDIR%/html
 
 :end
 popd
