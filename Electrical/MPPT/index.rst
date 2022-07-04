@@ -1,7 +1,9 @@
 MPPT
 ====
 
-Curent MPPT
+The following pages host general information about MPPTs used in Solar Gators Electrical.
 
-
-Custom MPPT?
+.. toctree::
+   :maxdepth: 2
+   
+   MPPT <MPPT.md>
