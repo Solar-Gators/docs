@@ -42,8 +42,20 @@ Read command: 0x00 00 00 00 00 00 00 ID
 
 ID corresponds to the number of the value you would like to request. Make sure to convert to hexadecimal if you choose to send a command in hexadecimal.
 
-| ID | Description | Type |
-| :----: | :----: | :----: |
+.. list-table:: MPPT Registers
+   :widths: 25 50 50
+   :header-rows: 1
+
+	* - ID
+	  - Description
+	  - Type
+	* - 0
+	  - Serial Number
+	  - int32
+	* - 1
+	  - Serial Number
+	  - int32
+
 | 0 | Serial Number | int32 |
 | 1 | Hard Output Voltage | float |
 | 2 | Min Output Voltage | float |
