@@ -42,14 +42,14 @@ Read command: 0x00 00 00 00 00 00 00 ID
 
 ID corresponds to the number of the value you would like to request. Make sure to convert to hexadecimal if you choose to send a command in hexadecimal.
 
-| :----: | :----: | :----: |
 | ID | Description | Type |
+| :----: | :----: | :----: |
 
-ID 0: 	Serial Number 			(int32)
-ID 1: 	Hard Output Voltage 		(float)
-ID 2: 	Min Output Voltage 		(float)
-ID 3: 	Max Output Voltage 		(float)
-ID 4: 	Const Output Voltage 		(float)
+| 0 | Serial Number | int32 |
+| 1 | Hard Output Voltage | float |
+| 2 | Min Output Voltage | float |
+| 3 | Max Output Voltage | float |
+| 4 | Const Output Voltage | float |
 ID 5: 	Max Temperature 			(float)
 ID 6: 	Hard Current 			(float)
 ID 7: 	Max Current 			(float)
