@@ -46,15 +46,15 @@ ID corresponds to the number of the value you would like to request. Make sure t
    :widths: 25 50 50
    :header-rows: 1
 
-	* - ID
-	  - Description
-	  - Type
-	* - 0
-	  - Serial Number
-	  - int32
-	* - 1
-	  - Serial Number
-	  - int32
+   * - ID
+     - Description
+     - Type
+   * - 0
+     - Serial Number
+     - int32
+   * - 1
+     - Serial Number
+     - int32
 
 | 0 | Serial Number | int32 |
 | 1 | Hard Output Voltage | float |
