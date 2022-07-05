@@ -27,7 +27,7 @@ There are three methods of communication with the MPPTs: telemetry data, reading
 
 Telemetry data provides real-time information on information such as solar array voltage and current, battery voltage and charging current, and temperature.
 
-To get telemetry data, an [RTR CAN message](https://copperhilltech.com/blog/controller-area-network-can-bus-remote-frame-and-avoiding-of-usage/) that is eight bytes long should be sent on the MPPT’s base address. The base address of the MPPT is 0x600 by default. It may be adjusted using the switches present on the MPPT. The MPPT will reply with the data on the same address. The format of the sent data can be found: ![Current MPPTs Preview](/_static/mppt/Photon CAN Structure.pdf).
+To get telemetry data, an [RTR CAN message](https://copperhilltech.com/blog/controller-area-network-can-bus-remote-frame-and-avoiding-of-usage/) that is eight bytes long should be sent on the MPPT’s base address. The base address of the MPPT is 0x600 by default. It may be adjusted using the switches present on the MPPT. The MPPT will reply with the data on the same address. The format of the sent data can be found: ![Current MPPTs Preview](Photon CAN Structure.pdf).
 .
 ## Reading Programmed Values  
 * Frequency: 125kHz or 500kHz
