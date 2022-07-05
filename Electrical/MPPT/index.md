@@ -27,7 +27,7 @@ There are three methods of communication with the MPPTs: telemetry data, reading
 
 Telemetry data provides real-time information on information such as solar array voltage and current, battery voltage and charging current, and temperature.
 
-To get telemetry data, an [RTR CAN message]( https://copperhilltech.com/blog/controller-area-network-can-bus-remote-frame-and-avoiding-of-usage/) that is eight bytes long should be sent on the MPPT’s base address. The base address of the MPPT is 0x600 by default. It may be adjusted using the switches present on the MPPT. The MPPT will reply with the data on the same address. The format of the sent data can be found ![here](/_static/mppt/Photon CAN Structure.pdf).
+To get telemetry data, an [RTR CAN message](https://copperhilltech.com/blog/controller-area-network-can-bus-remote-frame-and-avoiding-of-usage/) that is eight bytes long should be sent on the MPPT’s base address. The base address of the MPPT is 0x600 by default. It may be adjusted using the switches present on the MPPT. The MPPT will reply with the data on the same address. The format of the sent data can be found: ![Current MPPTs Preview](/_static/mppt/Photon CAN Structure.pdf).
 .
 ## Reading Programmed Values  
 * Frequency: 125kHz or 500kHz
@@ -44,41 +44,40 @@ ID corresponds to the number of the value you would like to request. Make sure t
 
 | ID | Description | Type |
 | :----: | :----: | :----: |
-
 | 0 | Serial Number | int32 |
 | 1 | Hard Output Voltage | float |
 | 2 | Min Output Voltage | float |
 | 3 | Max Output Voltage | float |
 | 4 | Const Output Voltage | float |
-ID 5: 	Max Temperature 			(float)
-ID 6: 	Hard Current 			(float)
-ID 7: 	Max Current 			(float)
-ID 8: 	Scale Amps In 			(float)
-ID 9: 	Offset Amps In 			(float)
-ID 10: 	Scale Amps Out 			(float)
-ID 11: 	Offset Amps Out 			(float)
-ID 12: 	Scale Volts In 			(float)
-ID 13: 	Offset Volts In 			(float)
-ID 14: 	Scale Volts Out 			(float)
-ID 15: 	Offset Volts Out 			(float)
-ID 16: 	Const Voltage Hyst 		(float)
-ID 17: 	Safety Voltage Hyst 		(float)
-ID 18: 	Safety Current Hyst 		(float)
-ID 19: 	Safety Temperature Hyst 	(float)
-ID 20: 	Thermistor Beta 			(float)
-ID 21: 	Thermistor Ro 			(float)
-ID 22:	Thermistor Rbias 			(float)
-ID 23:	Thermistor To 			(float)
-ID 24:	CAN Bitrate 			(int32)
-ID 25:	CAN Base Address 			(int32)
-ID 26:	Test Mode 				(int32)
-ID 27:	PO Seconds 				(float)
-ID 28:	INC Seconds 			(float)
-ID 29:	TRACK Seconds 			(float)
-ID 30:	SW Version 				(int32)
-ID 31: 	Sync Current Hi 			(float)
-ID 32:	Sync Current Low 			(float)
-ID 33:	Auto Send Rate 			(float)
+| 5 | Max Temperature | float |
+| 6 | Hard Current | float |
+| 7 | Max Current | float |
+| 8 | Scale Amps In | float |
+| 9 | Offset Amps In | float |
+| 10 | Scale Amps Out | float |
+| 11 | Offset Amps Out | float |
+| 12 | Scale Volts In | float |
+| 13 | Offset Volts In | float |
+| 14 | Scale Volts Out | float |
+| 15 | Offset Volts Out | float |
+| 16 | Const Voltage Hyst | float |
+| 17 | Safety Voltage Hyst | float |
+| 18 | Safety Current Hyst | float |
+| 19 | Safety Temperature Hyst | float |
+| 20 | Thermistor Beta | float |
+| 21 | Thermistor Ro | float |
+| 22 | Thermistor Rbias | float |
+| 23 | Thermistor To | float |
+| 24 | CAN Bitrate | int32 |
+| 25 | CAN Base Address | int32 |
+| 26 | Test Mode | int32 |
+| 27 | PO Seconds | float |
+| 28 | INC Seconds | float |
+| 29 | TRACK Seconds | float |
+| 30 | SW Version | int32 |
+| 31 | Sync Current Hi | float |
+| 32 | Sync Current Low | float |
+| 33 | Auto Send Rate | float |
 
 ## Writing to Programmed Values
    
