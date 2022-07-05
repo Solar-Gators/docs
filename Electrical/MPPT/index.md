@@ -6,12 +6,9 @@ Two of the three MPPTs are depicted above. The third MPPT looks like the MPPT on
 
 Chocolate Donut currently operates at 125kHz and therefore cannot be on the rest of the vehicle CAN bus, which operates at 500kHz. Red Velvet MPPTs do operate at 500kHz, though. In addition, Chocolate Donut will only respond to telemetry data requests. It will not respond to read/write communications. For more details on the various communication modes, see the sections below. Currently, it is not known that Chocolate Donut’s settings can be changed. Listed below are its last known settings:
 
-.. toctree::
-   :maxdepth: 1
-
-Max Voltage: 155V
-Nominal Voltage: 130V
-Min Voltage: 85V
+* Max Voltage: 155V
+* Nominal Voltage: 130V
+* Min Voltage: 85V
 
 
 ## Communicating with the MPPTs
@@ -21,36 +18,32 @@ There is no official documentation on programming the MPPTs. Programming methods
 There are three methods of communication with the MPPTs: telemetry data, reading data, and writing data. Communication is performed over CAN at either 125kHz or 500kHz with a message that is eight bytes long. Each method has a specific address that should be written to.
 
 ## Telemetry Data
-
-.. toctree::
-   :maxdepth: 1
    
-   Frequency: 125kHz or 500kHz
-   Identifier: Standard (11-bit)
-   Message Length (DLC): 8
-   Address: 0x600 (assuming default base address)
-   RTR: True
+* Frequency: 125kHz or 500kHz
+* Identifier: Standard (11-bit)
+* Message Length (DLC): 8
+* Address: 0x600 (assuming default base address)
+* RTR: True
 
 Telemetry data provides real-time information on information such as solar array voltage and current, battery voltage and charging current, and temperature.
 
 To get telemetry data, an [RTR CAN message]( https://copperhilltech.com/blog/controller-area-network-can-bus-remote-frame-and-avoiding-of-usage/) that is eight bytes long should be sent on the MPPT’s base address. The base address of the MPPT is 0x600 by default. It may be adjusted using the switches present on the MPPT. The MPPT will reply with the data on the same address. The format of the sent data can be found ![here](/_static/mppt/Photon CAN Structure.pdf).
 .
-## Reading Programmed Values
-
-.. toctree::
-   :maxdepth: 1
-   
-   Frequency: 125kHz or 500kHz
-   Identifier: Standard (11-bit)
-   Message Length (DLC): 8
-   Address: 0x620 (assuming default base address)
-   RTR: False
+## Reading Programmed Values  
+* Frequency: 125kHz or 500kHz
+* Identifier: Standard (11-bit)
+* Message Length (DLC): 8
+* Address: 0x620 (assuming default base address)
+* RTR: False
 
 Reading a programmed value will cause the MPPT to send out a CAN message of eight bytes on the same address of the requested parameter.
 
 Read command: 0x00 00 00 00 00 00 00 ID
 
 ID corresponds to the number of the value you would like to request. Make sure to convert to hexadecimal if you choose to send a command in hexadecimal.
+
+| :----: | :----: | :----: |
+| ID | Description | Type |
 
 ID 0: 	Serial Number 			(int32)
 ID 1: 	Hard Output Voltage 		(float)
@@ -88,19 +81,15 @@ ID 32:	Sync Current Low 			(float)
 ID 33:	Auto Send Rate 			(float)
 
 ## Writing to Programmed Values
-
-.. toctree::
-   :maxdepth: 1
    
-   Frequency: 125kHz or 500kHz
-   Identifier: Standard (11-bit)
-   Message Length (DLC): 8
-   Address: 0x630 (assuming default base address)
-   RTR: False
+* Frequency: 125kHz or 500kHz
+* Identifier: Standard (11-bit)
+* Message Length (DLC): 8
+* Address: 0x630 (assuming default base address)
+* RTR: False
 
 Send out a new value to write to a register in the MPPT. The addresses are the same as those found in the read section.
 
 Write command: 0xdd dd dd dd 2D 4E 45 ID
 
 ID corresponds to the data value you would like to write to. “dd” is a placeholder for the data you would like to write. You may choose to send a read command after writing to ensure you wrote successfully. Make sure to convert to hexadecimal if you choose to send a command in hexadecimal. Remember to [convert](https://www.h-schmidt.net/FloatConverter/IEEE754.html) floating point values.
-
