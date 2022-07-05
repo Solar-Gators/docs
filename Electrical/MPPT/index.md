@@ -1,6 +1,6 @@
 # Current MPPTs
 
-The current MPPTs used by the team are three [Photon 1s]( https://www.dilithiumpower.com/products/photon-1) from Dilithium Power Systems. Information and documentation on these MPPTs are very limited since the company no longer exists. However, the performance of these MPPTs is very good. They require 12V to operate and can communicate on the CAN bus. ![Current MPPTs Preview](/_static/mppt/mppts.png)
+The current MPPTs used by the team are three [Photon 1s]( https://www.dilithiumpower.com/products/photon-1) from Dilithium Power Systems. Information and documentation on these MPPTs are very limited since the company no longer exists. However, the performance of these MPPTs is very good. They require 12V to operate and can communicate on the CAN bus. ![Current MPPTs Preview](mppts.png)
 
 Two of the three MPPTs are depicted above. The third MPPT looks like the MPPT on the right. Internally, these two MPPTs are known as “Red Velvet.” The other MPPT depicted on the left is known as “Chocolate Donut.”
 
