@@ -18,6 +18,8 @@ Below is a list of docs for our Electrical subteams.
    :maxdepth: 1
    :caption: Electrical
    
+   Sunrider <Electrical/Sunrider/index>
+   FSGP 2022 <Electrical/FSGP2022/index>
    BMS <Electrical/BMS/index>
    Telemetry <Electrical/Telemetry/index>
    Auxiliary <Electrical/Auxiliary/index>

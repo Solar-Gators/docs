@@ -12,14 +12,10 @@ The BMS subteam consists of Custom BMS, Startup, and Orion BMS
     Orion BMS <OrionBMS>
     Startup <Startup>
 
-Trip State
-===
+**Trip State**
 The Orion BMS will isolate the high-voltage battery pack from the rest of the vehicle for any of the following reasons:
 
-.. toctree::
-    :maxdepth: 1
-    
-    The supplemental battery can no longer supply sufficient voltage to allow the contactors to stay open
-    The battery pack is overheating
-    The high-voltage battery voltage is too low
-    The motor attempts to draw too much current from the high-voltage battery
+* The supplemental battery can no longer supply sufficient voltage to allow the contactors to stay open
+* The battery pack is overheating
+* The high-voltage battery voltage is too low
+* The motor attempts to draw too much current from the high-voltage battery
