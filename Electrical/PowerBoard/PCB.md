@@ -4,7 +4,7 @@ The Power Board PCB was developed to step down voltages for other electrical sys
 
 ## DC/DC Converters
 
-Buck Converter. Our board uses 4 integrated DC/DC converters provided by TDK Lambda. These converters are used to safely step down the input voltages from 100V and 12V, to 5V and 3V3. The board includes a 100-12V converter, a 12-5V converter, and two 12-3.3V converters (One for the main state and one for the trip state).
+Our board uses one integrated DC/DC converter provided by TDK Lambda. This converter takes in an input voltage of 100V and safely outputs 12V with a small power loss. The current converter we have on the board has an efficiency rating of 86-92%. The converter utilizes a buck configuration integrating MOSFETs, inductors, capacitors, and diodes in order to complete a reduction in voltage by increasing the current. 
 
 ## Filters
 
@@ -12,8 +12,8 @@ We use filters in our board for many reasons. For one, these filters help to red
 
 ## Fuses
 
-Fuses are placed around our board to prevent the entire board from being damaged. The fuses are put in place as a fail-safe to human and calculation errors when soldering and testing the board. Obviously, it is a lot better economically to blow a fuse than to destroy the whole board and all of its components connected.
+Fuses are placed around our board to prevent the entire board from being damaged. The fuses are put in place as a fail-safe to human and calculation errors when soldering and testing the board. Obviously, it is a lot better economically to blow a fuse than to destroy the whole board and all of its components connected. When an overcurrent is across the fuse it will blow creating a physical isolation from the over current source and the components on the board. 
 
 ## Diode Oring
 
-The use of diode oring in the board allows the 100V and 12V sources to work together seamlessly. Two diodes have been placed in front of the 100V and 12V Supplementary lines to prevent voltage source backflow. When the 100V source is turned off, as the car enters its trip state, the diode on the 12V source is in forward bias, allowing current to flow through it, while the diode on the 100V supply line is in reverse bias, protecting the battery from backflow. When the car enters its main state, and the 100V battery pack is turned on, the diode in front of the 100V suuply line goes into forward bias and the 12V supply line diode enters reverse bias, preventing backflow from the higher voltage source.
+The use of diode oring in the board allows the 100V and 12V sources to work together seamlessly. Two diodes have been placed in front of the 100V and 12V Supplementary lines to prevent voltage source backflow. When the 100V source is turned off, as the car enters its trip state, the diode on the 12V source is in forward bias, allowing current to flow through it, while the diode on the 100V supply line is in reverse bias, protecting the battery from backflow. When the car enters its main state, and the 100V battery pack is turned on, the diode in front of the 100V suuply line goes into forward bias and the 12V supply line diode enters reverse bias, preventing backflow from the higher voltage source. The diode oring configuration will prefer the higher voltage of the two sources. This is why trim resistors are utilized at the output of the buck converter in order to increase the voltage to around 13V. This way when diode oring the preffered output will be the 100V source instead of the supplimentary battery. 
