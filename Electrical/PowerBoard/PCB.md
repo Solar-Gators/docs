@@ -4,7 +4,7 @@ The Power Board PCB was developed to step down voltages for other electrical sys
 
 ## DC/DC Converters
 
-Our board uses 4 integrated DC/DC converters provided by TDK Lambda. These converters are used to safely step down the input voltages from 100V and 12V, to 5V and 3V3. The board includes a 100-12V converter, a 12-5V converter, and two 12-3.3V converters (One for the main state and one for the trip state).
+Buck Converter. Our board uses 4 integrated DC/DC converters provided by TDK Lambda. These converters are used to safely step down the input voltages from 100V and 12V, to 5V and 3V3. The board includes a 100-12V converter, a 12-5V converter, and two 12-3.3V converters (One for the main state and one for the trip state).
 
 ## Filters
 
