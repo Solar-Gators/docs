@@ -13,7 +13,7 @@ This is a brief guide that is broken down into steps meant for a variety of oper
 
 First you need to install `node` v12.
 
-If you're running windows and want to follow the linux tutorial, my suggestion is to download [Windows Subsystem for Linux](https://docs.microsoft.com/en-us/windows/wsl/install-win10) (WSL). It allows you to run a linux shell from windows easily.
+You MUST use WSL if you are running Windows in order to run the current master version. Note that you must [enable systemd](https://stackoverflow.com/a/74843759>) in order to [start the MySQL server](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04) (ensure you follow these two linked tutorials before continuing).
 
 ```eval_rst
 
@@ -38,10 +38,6 @@ If you're running windows and want to follow the linux tutorial, my suggestion i
       *note*: You will need to install brew for this to work, refer to `this article <https://changelog.com/posts/install-node-js-with-homebrew-on-os-x/>`_ on how to do that.
 
       Alternatively you can download node's installer from their website, `link is here <https://nodejs.org/en/download/>`_.
-
-   .. tab:: Windows 10
-
-      The easiest way to install node on windows is to download the installer from their website. The link to their `download page is here <https://nodejs.org/en/download/>`_.
 
 ```
 
@@ -81,12 +77,14 @@ The next step is to download MySQL for the database. The steps for this will aga
 
       Alternatively you can download mysql's installer from their website, `link is here <https://dev.mysql.com/downloads/mysql/>`_.
 
-   .. tab:: Windows 10
-
-      The easiest way to install mysql on windows is to download the installer from their website. The link to their `download page is here <https://dev.mysql.com/downloads/installer/>`_.
 ```
 
 In order for our server to connect to mysql, we must create a user for it to login as. The server is configured to connect to mysql as `solargators` with no password. To create a MySQL user run a query. You can run queries in a variety of ways depending on what platform you are on. If you are on Linux/Mac then you can simply run `mysql` from the command line and run the queries. However if you're on windows then you will need to use a mysql client like MySQL work bench.
+
+If this is a fresh MySQL instance, you may need to run the following query to allow a user to have insecure/nonexistent passwords.
+```MySQL
+UNINSTALL PLUGIN validate_password;
+```
 
 To create a user run the following query.
 
@@ -112,6 +110,10 @@ Now we need to create the database. To do some run the following commands.
 
 ```Bash
 $ cd backend
+# Create symbolic link (since git clone doesn't)
+$ ln -s ../client/src/shared shared
+# Build our backend (which creates SQL configs)
+$ npm run build
 # Create the database
 $ npm run create-db
 # Migrate the database
