@@ -13,7 +13,7 @@ This is a brief guide that is broken down into steps meant for a variety of oper
 
 First you need to install `node` v12.
 
-You MUST use WSL if you are running Windows in order to run the current master version. Note that you must `enable systemd <https://stackoverflow.com/a/74843759>`_ in order to `start the MySQL server <https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04>`_ (ensure you follow these two linked tutorials before continuing).
+You MUST use WSL if you are running Windows in order to run the current master version. Note that you must [enable systemd](https://stackoverflow.com/a/74843759>) in order to [start the MySQL server](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04) (ensure you follow these two linked tutorials before continuing).
 
 ```eval_rst
 
