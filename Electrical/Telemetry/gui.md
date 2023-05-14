@@ -25,7 +25,7 @@ You MUST use WSL if you are running Windows in order to run the current master v
       
         *note*: You may need to install curl if it's not already installed
         
-        #Install nvm
+        # Install nvm
         $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
         
         # Install the latest version of node using nvm
@@ -106,7 +106,7 @@ Now we need to give our user some permissions to access the database. Run the fo
 GRANT ALL PRIVILEGES ON *.* TO 'solargators'@'localhost';
 ```
 
-Type `quit` when you want to exit the `mysql` CLI.
+Type `quit` when you want to exit the MySQL CLI.
 
 ### Install NPM Dependencies & Start
 
