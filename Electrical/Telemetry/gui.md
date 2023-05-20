@@ -9,9 +9,9 @@ The code for this team is located in the [pit-gui](https://github.com/Solar-Gato
 
 This is a brief guide that is broken down into steps meant for a variety of operating systems and skill levels. If you ever have trouble feel free to reach out to a senior member.
 
-### Install NodeJS
+### Install Node.js
 
-First you need to install `node` v12.
+First you need to install Node.js v20. We will use `nvm` (Node Version Manager) to do this to allow hotswapping between node versions when swapping between projects.
 
 You MUST use WSL if you are running Windows in order to run the current master version. Note that you must [enable systemd](https://stackoverflow.com/a/74843759>) in order to [start the MySQL server](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04) (ensure you follow these two linked tutorials before continuing).
 
@@ -22,12 +22,14 @@ You MUST use WSL if you are running Windows in order to run the current master v
    .. tab:: Linux
       
       .. code-block:: Bash
+      
+        *note*: You may need to install curl if it's not already installed
         
-        #Get Node sources
-        $ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
-        #Now install node
-        $ sudo apt-get install nodejs
-      *note*: You may need to install curl if it's not already
+        # Install nvm
+        $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
+        
+        # Install the latest version of node using nvm
+        $ nvm install node
 
    .. tab:: Mac OSX
 
@@ -45,9 +47,9 @@ To verify that Node is installed, run the following command from command line.
 
 ```Bash
 $ node -v
-v12.16.1
+v20.1.0
 ```
-As pictured above `v12.16.1` should be returned if node is correctly configured. If it does not get returned node may not be installed correctly or is not you path and therefore not recognized by your shell.
+As pictured above `v20.x.x` should be returned if node is correctly configured. If it does not get returned node may not be installed correctly or is not you path and therefore not recognized by your shell.
 
 ### Install MySQL
 
@@ -79,7 +81,13 @@ The next step is to download MySQL for the database. The steps for this will aga
 
 ```
 
-In order for our server to connect to mysql, we must create a user for it to login as. The server is configured to connect to mysql as `solargators` with no password. To create a MySQL user run a query. You can run queries in a variety of ways depending on what platform you are on. If you are on Linux/Mac then you can simply run `mysql` from the command line and run the queries. However if you're on windows then you will need to use a mysql client like MySQL work bench.
+In order for our server to connect to mysql, we must create a user for it to login as. The server is configured to connect to mysql as `solargators` with no password. To create and configure this MySQL user, you must run a query. To do this, we will use the MySQL CLI (Command Line Interface), which will allow us to run MySQL queries directly in the command line.
+
+```Bash
+$ sudo mysql
+```
+
+This will bring up the MySQL CLI, which we can then type the following MySQL queries into:
 
 If this is a fresh MySQL instance, you may need to run the following query to allow a user to have insecure/nonexistent passwords.
 ```MySQL
@@ -98,6 +106,8 @@ Now we need to give our user some permissions to access the database. Run the fo
 GRANT ALL PRIVILEGES ON *.* TO 'solargators'@'localhost';
 ```
 
+Type `quit` when you want to exit the MySQL CLI.
+
 ### Install NPM Dependencies & Start
 
 Now you need to install the dependencies, to do so run the following command from the root of the repository.
@@ -110,12 +120,16 @@ Now we need to create the database. To do some run the following commands.
 
 ```Bash
 $ cd backend
+
 # Create symbolic link (since git clone doesn't)
 $ ln -s ../client/src/shared shared
+
 # Build our backend (which creates SQL configs)
 $ npm run build
+
 # Create the database
 $ npm run create-db
+
 # Migrate the database
 $ npm run migrate
 ```
