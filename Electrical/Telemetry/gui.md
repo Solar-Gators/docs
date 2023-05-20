@@ -118,15 +118,15 @@ Now you need to install the dependencies, to do so run the following command fro
 $ npm run install-all
 ```
 
-Now we need to create the database. To do some run the following commands.
+Now we need to create and populate the database. To do some run the following commands:
 
 ```Bash
 $ cd backend
 
-# Create symbolic link (since git clone doesn't)
+# Create symbolic link (may already have been done depending on git clone method)
 $ ln -s ../client/src/shared shared
 
-# Build our backend (which creates SQL configs)
+# Build our backend (which creates SQL configs needed by the following commands)
 $ npm run build
 
 # Create the database
@@ -134,12 +134,29 @@ $ npm run create-db
 
 # Migrate the database
 $ npm run migrate
+
+# Add seeder rows for each table
+$ npm run seed
 ```
 
-To start the website in dev mode
+To start the website in dev mode:
 
 ```Bash
+# Navigate back from Pit-GUI/backend to Pit-GUI 
+$ cd ..
+
+# Concurrently start both backend server and client server
+$ npm run start
+```
+
+Or alternatively, to have backend and client in seperate windows for easier debugging:
+```Bash
+# Start backend server
 $ npm start
+
+# In a new command line window, navigate to Pit-GUI/client and:
+# Start client server
+$ npm run start
 ```
 
 The website will popup a new browser window at `localhost:3000`.
