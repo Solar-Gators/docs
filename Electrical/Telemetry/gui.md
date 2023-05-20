@@ -13,7 +13,7 @@ This is a brief guide that is broken down into steps meant for a variety of oper
 
 First you need to install Node.js v20. We will use `nvm` (Node Version Manager) to do this to allow hotswapping between node versions when swapping between projects.
 
-You MUST use WSL if you are running Windows in order to run the current master version. Note that you must [enable systemd](https://stackoverflow.com/a/74843759>) in order to [start the MySQL server](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04) (ensure you follow these two linked tutorials before continuing).
+You MUST use WSL if you are running Windows in order to run the current master version.
 
 ```eval_rst
 
@@ -54,6 +54,8 @@ As pictured above `v20.x.x` should be returned if node is correctly configured. 
 ### Install MySQL
 
 The next step is to download MySQL for the database. The steps for this will again depend on what OS you are running on.
+
+Note that you must [enable systemd](https://stackoverflow.com/a/74843759) if on WSL in order to start the MySQL server.
 
 ```eval_rst
 
