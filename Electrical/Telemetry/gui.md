@@ -13,7 +13,7 @@ This is a brief guide that is broken down into steps meant for a variety of oper
 
 First you need to install Node.js v20. We will use `nvm` (Node Version Manager) to do this to allow hotswapping between node versions when swapping between projects.
 
-You MUST use WSL if you are running Windows in order to run the current master version. Note that you must [enable systemd](https://stackoverflow.com/a/74843759>) in order to [start the MySQL server](https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04) (ensure you follow these two linked tutorials before continuing).
+You MUST use WSL if you are running Windows in order to run the current master version.
 
 ```eval_rst
 
@@ -54,6 +54,8 @@ As pictured above `v20.x.x` should be returned if node is correctly configured. 
 ### Install MySQL
 
 The next step is to download MySQL for the database. The steps for this will again depend on what OS you are running on.
+
+Note that you must [enable systemd](https://stackoverflow.com/a/74843759) if on WSL in order to start the MySQL server.
 
 ```eval_rst
 
@@ -116,15 +118,15 @@ Now you need to install the dependencies, to do so run the following command fro
 $ npm run install-all
 ```
 
-Now we need to create the database. To do some run the following commands.
+Now we need to create and populate the database. To do some run the following commands:
 
 ```Bash
 $ cd backend
 
-# Create symbolic link (since git clone doesn't)
+# Create symbolic link (may already have been done depending on git clone method)
 $ ln -s ../client/src/shared shared
 
-# Build our backend (which creates SQL configs)
+# Build our backend (which creates SQL configs needed by the following commands)
 $ npm run build
 
 # Create the database
@@ -132,12 +134,29 @@ $ npm run create-db
 
 # Migrate the database
 $ npm run migrate
+
+# Add seeder rows for each table
+$ npm run seed
 ```
 
-To start the website in dev mode
+To start the website in dev mode:
 
 ```Bash
+# Navigate back from Pit-GUI/backend to Pit-GUI 
+$ cd ..
+
+# Concurrently start both backend server and client server
+$ npm run start
+```
+
+Or alternatively, to have backend and client in seperate windows for easier debugging:
+```Bash
+# Start backend server
 $ npm start
+
+# In a new command line window, navigate to Pit-GUI/client and:
+# Start client server
+$ npm run start
 ```
 
 The website will popup a new browser window at `localhost:3000`.
