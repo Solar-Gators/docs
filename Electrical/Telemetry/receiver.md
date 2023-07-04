@@ -1,8 +1,8 @@
 # Telemetry Collector
 
-The code for this team is located in the [telemetry-collector](https://github.com/Solar-Gators/telemetry-collector) repository.
+The code for this component is located in the [telemetry-collector](https://github.com/Solar-Gators/Sunrider-Firmware/tree/main/telemetry-collector).
 
-All communications from the vehicle come over the RFD900x module which reports UART back to us. This repository is the software responsible for decoding the message after it is sent over UART and sending it to the correct endpoint on our [GUI Server](gui.md).
+All communications from the vehicle come over the RFD900x module which reports UART back to us. This repository is the software responsible for decoding the message after it is sent over UART and sending it to the correct endpoint on [PIT GUI](gui.md).
 
 ## Model
 
@@ -12,7 +12,7 @@ Physical Layer: [UART Protocol](https://en.wikipedia.org/wiki/Universal_asynchro
 
 Data Link Layer: [Byte Stuffing](https://www.geeksforgeeks.org/difference-between-byte-stuffing-and-bit-stuffing/)
 
-The data link layer reports the data to the network layer which then reports to the correct database entry. The graph looks a little like this
+The data link layer reports the data to the network layer which then reports to the correct endpoint. The graph looks a little like this
 ```
      Custom        (Network Layer)
        ^
@@ -43,7 +43,7 @@ When the UART transmissions are reported to the Data Link Layer the messages are
 ```
 0xFF  | 0x01 | 0x02 | 0x2F | 0x3F | 0x05 | 0x3F
 -----------------------------------------------
-START | DATA | DATA | ESC  | DATA | DATA | END  
+START | DATA | DATA | ESC  | DATA | DATA | END
 
 Packet: 0x01, 0x02, 0x3F, 0x05
 
@@ -51,53 +51,25 @@ Packet: 0x01, 0x02, 0x3F, 0x05
 
 ### Step 2: Network Layer
 
-The network layer is a custom protocol used for sending telemetry information in a way that is easily verifiable. The protocol is separated into messages and data. The first byte in the transmission is the number of messages in the transmission. For every message there is an address, length and data package. The first byte contains the address which corresponds to a telemetry item (ie Battery Cell 1, GPS, Temperature). The second byte in a message is the length of the data packet that follows the first two bytes. 
+The network layer is a custom protocol used for sending telemetry information in a way that is easily verifiable. The protocol is separated into messages and data. The first byte in the transmission is the number of messages in the transmission. For every message there is an address, length and data package. The first byte contains the address which corresponds to a telemetry item (ie Battery Cell 1, GPS, Temperature). The second byte in a message is the length of the data packet that follows the first two bytes.
 
 
 Below is a graphical representation of what a transmission looks like.
 
 ```text
 
-8 bit message length | { 8 bit address | 8 bit data length | 1 byte of data | ... n bytes of data }
+32 bit CAN address | 8 bit instance ID | 8 bit size | 16 bit CRC | 1 byte of data | ... n bytes of data
 
 ```
 
-#### Decoding messages 
+#### Decoding messages
 
-After passing through the Data Link layer the packet is passed up the the network layer. As previously mentioned, the network layer reports the telemetry addresses to be inserted. The telemetry addresses have been predefined as needed below.
+After passing through the Data Link layer the packet is passed up the the network layer. As previously mentioned, the network layer reports the telemetry addresses to be inserted. The telemetry addresses are the same as the CAN addresses.
 
-```eval_rst
-+------------+------------+
-| Telemetry  |  Address   | 
-+============+============+
-|    GPS     |    0x00    |
-+------------+------------+
-|    MPPT    |    0x01    |
-+------------+------------+
-|    BMS     |    0x02    |
-+------------+------------+
-|    IMU     |    0x03    |
-+------------+------------+
-```
-
-Each telemetry has a custom method for decoding based on it's needs. There is not a generic method that fits all of them, so each one has it's own implmentation.
 
 ### Step 3: API End Points
 
-After being passed through the network layer the data is delivered to the proper endpoint to be stored in a database. The list of endpoints can be [found here](gui.html#api-endpoints).
-
-## Getting Started
-
-To get started with the project you will need NodeJS and NPM installed. Then install the local dependancies using the npm install command.
-
-```Bash
-npm install
-```
-
-Then to start run the following command
-```Bash
-npm start
-```
+After being passed through the network layer the data is delivered to the proper endpoint to be stored in a database.
 
 ## Usage with Raspberry PI
 
@@ -107,7 +79,7 @@ The telemetry collector was designed to run on a raspberry pi during competition
 - Raspberry Pi
 - 8GB+ Micro SD Card
 - Micro SD Card Reader
-- Digital Analog Discovery 2 (optional)
+- RFD900x
 
 ### Installing Operating System
 
@@ -121,7 +93,7 @@ Next we will need software to mount our OS to a Micro SD card. Download and inst
 
 To flash the OS onto the SD card, follow these steps.
 
-- Insert the micro SD card into the card reader and verify that your computer recognizes it. 
+- Insert the micro SD card into the card reader and verify that your computer recognizes it.
 - Click "Select image" button and find the Raspberry Pi OS Lite zip file that you downloaded.
 - Click the "Select drive" button and specify the memory card as the target location.
 - Click the "Flash!" button to write the image to the memory card.
@@ -151,7 +123,7 @@ source: [Setting up a Raspberry Pi headless](https://www.raspberrypi.org/documen
 
 To enable ssh access on boot an empty `ssh` file should be created at the root of the boot sd card.
 
-After adding the files the directory should look similar to the following. 
+After adding the files the directory should look similar to the following.
 
 ![PI Example Network Configuration Folder](/_static/telemetry/pi_example_network_config.JPG)
 
@@ -190,18 +162,18 @@ pi@raspberrypi: ~ $ sudo apt update
 Now we need to pull in the node package.
 
 ```Bash
-pi@raspberrypi: ~ $ curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
+pi@raspberrypi: ~ $ curl -sL https://deb.nodesource.com/setup_18.x | sudo -E bash -
 ```
 
 Next install node.
 
-```
+```Bash
 pi@raspberrypi: ~ $ sudo apt-get install -y nodejs
 ```
 
 Now to verify that node is installed correctly run this command:
 
-```
+```Bash
 pi@raspberrypi: ~ $ node -v
 ```
 
@@ -209,87 +181,76 @@ pi@raspberrypi: ~ $ node -v
 
 Raspberry Pi OS does not come with Git preinstalled, so we must install Git to continue.
 
-```
+```Bash
 pi@raspberrypi: ~ $ sudo apt install git
 ```
 
 Now clone the telemetry collector repository.
 
-```
-pi@raspberrypi: ~ $ git clone https://github.com/Solar-Gators/telemetry-collector
-```
-
-Install the npm dependencies in the repository.
-
-```
-pi@raspberrypi: ~ $ cd telemetry-collector
-pi@raspberrypi: ~ $ npm install
+```Bash
+pi@raspberrypi: ~ $ git clone https://github.com/Solar-Gators/Sunrider-Firmware
 ```
 
-You may see some C errors when serialport is installing, you can ignore those as long as npm does not give you an error.
+Install pm2 (we'll need this later).
+
+```Bash
+pi@raspberrypi: ~ $ npm install -g pm2
+```
+
+Install the python dependencies with the following command:
+
+```Bash
+pi@raspberrypi: ~ $ apt-get -y install python3 && \
+                    apt-get -y install python3-pip && \
+                    apt-get -y install python3-dev && \
+                    apt-get -y install build-essential
+```
+
+Then install the pip dependencies:
+```Bash
+pi@raspberrypi: ~ $ cd Sunrider-Firmware/telemetry-collector
+pi@raspberrypi: ~ $ pip install -r requirements.txt
+```
+
+Now run the following command to build the software:
+```Bash
+pi@raspberrypi: ~ $ make all
+```
+
+Ensure that it builds successfully.
 
 ### Configuring UART
 
-The Raspberry Pi comes with an UART interface on the GPIO pin breakouts. GPIO pin 14 is Tx and pin 15 is Rx.
+The RFD900x comes with a usb connection that can be connected to any of the raspberry pi's UART ports. You will need to determine the device port and update the `ecosystem.config.js` file's `UART_PORT` environment variable.
 
-![UART pins Image](/_static/telemetry/raspberry_uart.png)
+The quickest way to determine the port is by disconnecting the USB, run the following command, then reconnecting usb, run the command again, and see which port gets added to the list.
 
-In order to access these pins you must disable the Linux serial console. To do this follow the following steps.
-
-- Start raspi-config
-```Bash
-pi@raspberrypi: ~ $ sudo raspi-config
-```
-- Select `option 5` - interfacing options.
-- Select `option P6` - serial.
-- At the prompt Would you like a login shell to be accessible over serial? answer `No`
-- At the prompt Would you like the serial port hardware to be enabled? answer `Yes`
-- Exit raspi-config and reboot the Pi for changes to take effect.
-
-Source: [UART configuration](https://www.raspberrypi.org/documentation/configuration/uart.md)
-
-After rebooting the UART interface will be accessible. Run the following commands to list the interfaces.
-
-```Bash
-pi@raspberrypi: ~ $ ls -l /dev | grep serial
+```bash
+pi@raspberrypi: ~ python -m serial.tools.list_ports
 ```
 
-You should see an output that looks like this.
+### Starting the Telemetry Collector
 
-```
-lrwxrwxrwx 1 root root           5 Jul  5 00:54 serial0 -> ttyS0
-lrwxrwxrwx 1 root root           7 Jul  5 00:54 serial1 -> ttyAMA0
-```
-The `ttyS0` (alias `serial0`) file is the interface for the UART GPIO pins.
+Start the collector using `pm2`:
 
-Now run the following command from the root of the repository.
-
-```Bash
-pi@raspberrypi: ~ $ npm start
+```bash
+pi@raspberrypi: ~ pm2 start ecosystem.config.js
 ```
 
-### Testing With The DAD
+Ensure the collector is online:
+```bash
+pi@raspberrypi: ~ pm2 ls
+```
 
-We use the Digital Analog Discovery (DAD) board for various things in classes like circuits 1, digital logic, etc. Most EE and CE majors have one laying around, so if you do not have one feel free to ask around.
+Save the collector so it can be easily started at boot up:
+```bash
+pi@raspberrypi: ~ pm2 save
+```
 
-If this is your first time using the DAD then you will need to [download WaveForms.](https://store.digilentinc.com/waveforms-download-only/)
-
-WaveForms has a useful feature called "Protocol" it is located at the bottom left of the main menu. It can emulate many embedded protocols. The one we are interested in here is the UART protocol that our physical layer uses.
-
-- Select the "Protocol" button from the main menu
-- Select the "UART" tab if it's not already selected
-- Select "DIO 0" for the TX if it's not already selected
-- Select "DIO 1" for the RX if it's not already selected
-- Connect GPIO 15 on the Pi to DIO 0
-- Connect GPIO 14 on the Pi to DIO 1
-
-Once everything is connected and the node server is running (`npm start`) then click the `send` button on WaveForms next to TX on the protocol tab.
-
-There should be an output error similar to this.
-
-![raspberry uart error](/_static/telemetry/raspberry_uart_error.PNG)
-
-This error is occurring because the data link layer expects the first byte to be a start byte. See the [data link layer section](receiver.html#step-1-data-link-layer) for details.
+When the pi starts the collector can be easily started with the following command:
+```bash
+pi@raspberrypi: ~ pm2 resurrect
+```
 
 ### Emulation
 
