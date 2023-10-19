@@ -1,19 +1,14 @@
-# GUI
+# Pit-GUI
 
-The code for this team is located in the [pit-gui](https://github.com/Solar-Gators/Pit-GUI) repository.
+The code for this team is located in the [Pit-GUI](https://github.com/Solar-Gators/Pit-GUI) repository.
 
 ![GUI Preview](/_static/telemetry/live-telemetry.png)
 
-
 ## Getting Started
-
-This is a brief guide that is broken down into steps meant for a variety of operating systems and skill levels. If you ever have trouble feel free to reach out to a senior member.
 
 ### Install Node.js
 
-First you need to install Node.js v20. We will use `nvm` (Node Version Manager) to do this to allow hotswapping between node versions when swapping between projects.
-
-You MUST use WSL if you are running Windows in order to run the current master version.
+First you need to install the latest version of Node.js (anything v16 or above should work, but v20 is reccomended).
 
 ```eval_rst
 
@@ -23,23 +18,22 @@ You MUST use WSL if you are running Windows in order to run the current master v
 
       .. code-block:: Bash
 
-        *note*: You may need to install curl if it's not already installed
-
-        # Install nvm
-        $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-
-        # Install the latest version of node using nvm
-        $ nvm install node
+         sudo apt install nodejs
+         sudo apt install npm
 
    .. tab:: Mac OSX
 
       .. code-block:: Bash
 
-        $ brew install node
+        brew install node
 
       *note*: You will need to install brew for this to work, refer to `this article <https://changelog.com/posts/install-node-js-with-homebrew-on-os-x/>`_ on how to do that.
 
-      Alternatively you can download node's installer from their website, `link is here <https://nodejs.org/en/download/>`_.
+      Alternatively you can download node's installer from their `website <https://nodejs.org/en/download/>`_.
+
+.. tab:: Windows 10/11
+
+      Download node's installer from their `website <https://nodejs.org/en/download/>`_.
 
 ```
 
@@ -49,7 +43,11 @@ To verify that Node is installed, run the following command from command line.
 $ node -v
 v20.1.0
 ```
-As pictured above `v20.x.x` should be returned if node is correctly configured. If it does not get returned node may not be installed correctly or is not you path and therefore not recognized by your shell.
+As pictured above `v16+.x.x` should be returned if node is correctly configured. If it does not get returned node may not be installed correctly or the path is not recognized by your shell. If restarting your shell instance does not fix it, you will need to add the node executable to your shell PATH.
+
+## Setting up a sample backend
+
+If you are only planning on doing frontend development, these steps are not nesecary. By default, the app is set to use the remote Solar Gators API, rather than anything hosted locally.
 
 ### Install MySQL
 
