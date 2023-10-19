@@ -1,6 +1,6 @@
 # Software
 ## Solidworks
-- [Solidworks Installation](coming soon!)
+- [Solidworks Installation 2020-21](https://github.com/Solar-Gators/docs/blob/master/AeroBody/Body/PDFs/SWinstallation.pdf)
 
 ## Star CCM+
 - [Star CCM+ Installation](coming soon!)
