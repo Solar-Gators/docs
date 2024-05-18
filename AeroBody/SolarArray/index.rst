@@ -1,8 +1,6 @@
 Solar Array
 ===============
 
-.. figure:: 
-
 More Power!
 
 .. toctree::
