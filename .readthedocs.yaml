@@ -9,3 +9,7 @@ build:
     golang: "1.19"
   apt_packages:
     - cmake
+
+python:
+  install:
+    - requirements: .py-requirements.txt
