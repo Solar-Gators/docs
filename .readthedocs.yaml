@@ -10,6 +10,9 @@ build:
   apt_packages:
     - cmake
 
+sphinx:
+  configuration: .sphinx-conf.py
+
 python:
   install:
     - requirements: .py-requirements.txt
