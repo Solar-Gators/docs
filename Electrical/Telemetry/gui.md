@@ -25,14 +25,13 @@ First you need to install the latest version of Node.js (anything v16 or above s
 
       .. code-block:: Bash
 
-        brew install node
+         brew install node
 
       *note*: You will need to install brew for this to work, refer to `this article <https://changelog.com/posts/install-node-js-with-homebrew-on-os-x/>`_ on how to do that.
 
       Alternatively you can download node's installer from their `website <https://nodejs.org/en/download/>`_.
 
-.. tab:: Windows 10/11
-
+   .. tab:: Windows 10/11
       Download node's installer from their `website <https://nodejs.org/en/download/>`_.
 
 ```
@@ -63,9 +62,10 @@ Note that you must [enable systemd](https://stackoverflow.com/a/74843759) if on 
 
       .. code-block:: Bash
 
-        sudo apt install mysql-server
-        # Start mysql server
-        sudo /etc/init.d/mysql start
+         sudo apt install mysql-server
+
+         # Start mysql server
+         sudo /etc/init.d/mysql start
 
       *reference*: `How To Install MySQL on Ubuntu 18.04 <https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04>`_
 
@@ -73,12 +73,14 @@ Note that you must [enable systemd](https://stackoverflow.com/a/74843759) if on 
 
       .. code-block:: Bash
 
-        brew install mysql
+         brew install mysql
 
       *note*: You will need to install brew for this to work, refer to `this article <https://changelog.com/posts/install-node-js-with-homebrew-on-os-x/>`_ on how to do that.
 
       Alternatively you can download mysql's installer from their website, `link is here <https://dev.mysql.com/downloads/mysql/>`_.
 
+   .. tab:: Windows 10/11
+      Download mysql's installer from their `website <https://dev.mysql.com/downloads/mysql/>`_.
 ```
 
 In order for our server to connect to mysql, we must create a user for it to login as. The server is configured to connect to mysql as `solargators` with no password. To create and configure this MySQL user, you must run a query. To do this, we will use the MySQL CLI (Command Line Interface), which will allow us to run MySQL queries directly in the command line.
