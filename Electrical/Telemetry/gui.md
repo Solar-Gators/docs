@@ -1,19 +1,14 @@
-# GUI
+# Pit-GUI
 
-The code for this team is located in the [pit-gui](https://github.com/Solar-Gators/Pit-GUI) repository.
+The code for this team is located in the [Pit-GUI](https://github.com/Solar-Gators/Pit-GUI) repository.
 
 ![GUI Preview](/_static/telemetry/live-telemetry.png)
 
-
 ## Getting Started
-
-This is a brief guide that is broken down into steps meant for a variety of operating systems and skill levels. If you ever have trouble feel free to reach out to a senior member.
 
 ### Install Node.js
 
-First you need to install Node.js v20. We will use `nvm` (Node Version Manager) to do this to allow hotswapping between node versions when swapping between projects.
-
-You MUST use WSL if you are running Windows in order to run the current master version.
+First you need to install the latest version of Node.js (anything v16 or above should work, but v20 is reccomended).
 
 ```eval_rst
 
@@ -23,33 +18,35 @@ You MUST use WSL if you are running Windows in order to run the current master v
 
       .. code-block:: Bash
 
-        *note*: You may need to install curl if it's not already installed
-
-        # Install nvm
-        $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash
-
-        # Install the latest version of node using nvm
-        $ nvm install node
+         sudo apt install nodejs
+         sudo apt install npm
 
    .. tab:: Mac OSX
 
       .. code-block:: Bash
 
-        $ brew install node
+         brew install node
 
       *note*: You will need to install brew for this to work, refer to `this article <https://changelog.com/posts/install-node-js-with-homebrew-on-os-x/>`_ on how to do that.
 
-      Alternatively you can download node's installer from their website, `link is here <https://nodejs.org/en/download/>`_.
+      Alternatively you can download node's installer from their `website <https://nodejs.org/en/download/>`_.
+
+   .. tab:: Windows 10/11
+      Download node's installer from their `website <https://nodejs.org/en/download/>`_.
 
 ```
 
 To verify that Node is installed, run the following command from command line.
 
 ```Bash
-$ node -v
+node -v
 v20.1.0
 ```
-As pictured above `v20.x.x` should be returned if node is correctly configured. If it does not get returned node may not be installed correctly or is not you path and therefore not recognized by your shell.
+As pictured above `v16+.x.x` should be returned if node is correctly configured. If it does not get returned node may not be installed correctly or the path is not recognized by your shell. If restarting your shell instance does not fix it, you will need to add the node executable to your shell PATH.
+
+## Setting up a sample backend
+
+If you are only planning on doing frontend development, these steps are not nesecary. By default, the app is set to use the remote Solar Gators API, rather than anything hosted locally.
 
 ### Install MySQL
 
@@ -65,9 +62,10 @@ Note that you must [enable systemd](https://stackoverflow.com/a/74843759) if on 
 
       .. code-block:: Bash
 
-        $ sudo apt install mysql-server
-        # Start mysql server
-        $ sudo /etc/init.d/mysql start
+         sudo apt install mysql-server
+
+         # Start mysql server
+         sudo /etc/init.d/mysql start
 
       *reference*: `How To Install MySQL on Ubuntu 18.04 <https://www.digitalocean.com/community/tutorials/how-to-install-mysql-on-ubuntu-18-04>`_
 
@@ -75,18 +73,20 @@ Note that you must [enable systemd](https://stackoverflow.com/a/74843759) if on 
 
       .. code-block:: Bash
 
-        $ brew install mysql
+         brew install mysql
 
       *note*: You will need to install brew for this to work, refer to `this article <https://changelog.com/posts/install-node-js-with-homebrew-on-os-x/>`_ on how to do that.
 
       Alternatively you can download mysql's installer from their website, `link is here <https://dev.mysql.com/downloads/mysql/>`_.
 
+   .. tab:: Windows 10/11
+      Download mysql's installer from their `website <https://dev.mysql.com/downloads/mysql/>`_.
 ```
 
 In order for our server to connect to mysql, we must create a user for it to login as. The server is configured to connect to mysql as `solargators` with no password. To create and configure this MySQL user, you must run a query. To do this, we will use the MySQL CLI (Command Line Interface), which will allow us to run MySQL queries directly in the command line.
 
 ```Bash
-$ sudo mysql
+sudo mysql
 ```
 
 This will bring up the MySQL CLI, which we can then type the following MySQL queries into:
@@ -112,51 +112,44 @@ Type `quit` when you want to exit the MySQL CLI.
 
 ### Install NPM Dependencies & Start
 
+If using the local database (rather than pulling from the remote telemetry site), add a file with name `.env` in the `client` folder with the contents:
+```env
+REACT_APP_TELEMETRY_API = "http://localhost:9000"
+```
+
 Now you need to install the dependencies, to do so run the following command from the root of the repository.
 
 ```Bash
-$ npm run install-all
+npm run install-all
 ```
 
-Now we need to create and populate the database. To do some run the following commands:
+Now we need to ensure our symbolic link is in place. To do so run the following commands:
 
 ```Bash
-$ cd backend
+cd backend
 
 # Create symbolic link (may already have been done depending on git clone method)
-$ ln -s ../client/src/shared shared
-
-# Build our backend (which creates SQL configs needed by the following commands)
-$ npm run build
-
-# Create the database
-$ npm run create-db
-
-# Migrate the database
-$ npm run migrate
-
-# Add seeder rows for each table
-$ npm run seed
+ln -s ../client/src/shared shared
 ```
 
 To start the website in dev mode:
 
 ```Bash
 # Navigate back from Pit-GUI/backend to Pit-GUI
-$ cd ..
+cd ..
 
 # Concurrently start both backend server and client server
-$ npm run start
+npm run start
 ```
 
 Or alternatively, to have backend and client in separate windows for easier debugging:
 ```Bash
 # Start backend server
-$ npm start
+npm start
 
 # In a new command line window, navigate to Pit-GUI/client and:
 # Start client server
-$ npm run start
+npm run start
 ```
 
 The website will popup a new browser window at `localhost:3000`.
