@@ -11,8 +11,8 @@ build:
     - cmake
 
 sphinx:
-  configuration: .sphinx-conf.py
+  configuration: conf.py
 
 python:
   install:
-    - requirements: .py-requirements.txt
+    - requirements: requirements.txt
