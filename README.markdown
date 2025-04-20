@@ -1,3 +1,7 @@
+**WIKI NOW LIVES AT** https://wiki.ufsolargators.org
+
+
+
 # Solar Gators Master Documentation
 
 [![Documentation Status](https://readthedocs.org/projects/solar-gators-docs/badge/?version=latest)](https://docs.ufsolargators.org/en/latest/?badge=latest)
