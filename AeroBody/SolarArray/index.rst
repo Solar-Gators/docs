@@ -6,5 +6,6 @@ More Power!
 .. toctree::
    :maxdepth: 1
 
-   Documentation <Documentation>
+   Manufacturing <Manufacturing>
+   Knowledge Retention <Knowledge_Retention>
      
